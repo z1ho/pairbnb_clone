@@ -9,7 +9,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :address
       t.string :room_type
       t.string :property_type
-      t.string :accomodates
+      t.integer :accomodates
       t.integer :num_of_beds
       t.integer :num_of_bathrooms
 

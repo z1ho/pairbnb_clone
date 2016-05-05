@@ -5,6 +5,20 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Host",   '#' %></li>
+        <li><%= link_to "Message",   '#' %></li>
+        <li><%= link_to "Help", '#' %></li>
+        <li><%= link_to "Your Profile", '#' %></li>
+      </ul>
+    </nav>
+  </div>
+  </header>
+
+
   <div id="header">
     <% if signed_in? -%>
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
