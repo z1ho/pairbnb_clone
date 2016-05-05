@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :listings
   # get 'listings/new'
 
-  # get 'static/home'
+  get 'static/home'
   # get 'sessions/new'
 
   root 'sessions#new'

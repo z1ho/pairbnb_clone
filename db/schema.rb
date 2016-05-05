@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20160505043242) do
     t.string   "address"
     t.string   "room_type"
     t.string   "property_type"
-    t.integer  "accomodates"
-    t.integer  "num_of_beds"
-    t.integer  "num_of_bathrooms"
+    t.string   "accomodates"
+    t.string   "num_of_beds"
+    t.string   "num_of_bathrooms"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

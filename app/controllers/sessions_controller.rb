@@ -19,4 +19,7 @@ class SessionsController < ApplicationController
   #
   # def destroy
   # end
+  def url_after_create
+    static_home_path
+  end
 end

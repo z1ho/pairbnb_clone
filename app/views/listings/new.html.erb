@@ -1,10 +1,10 @@
 <h1>Listings#New</h1>
 
-<p>Welcome back!</p>
+<p>Welcome back <b><%= current_user.first_name %></b>!</p>
 
 <h3>Add a Listing</h3>
 
-<%= form_for :listing, url: new_listing_path do |form| %>
+<%= form_for @listing do |form| %>
   <div class="text-field">
     <%= form.label :name %>
     <%= form.text_field :name, type: 'Name of Listing' %>
@@ -26,6 +26,11 @@
   </div>
 
   <div class="text-field">
+    <%= form.label :address %>
+    <%= form.text_field :address, type: 'Address' %>
+  </div>
+
+  <div class="text-field">
     <%= form.label :room_type %>
     <%= form.text_field :room_type, type: 'Room Type' %>
   </div>
@@ -41,13 +46,13 @@
   </div>
 
   <div class="text-field">
-    <%= form.label :start_date %>
-    <%= form.date_field :start_date, type: 'Check-In' %>
+    <%= form.label :num_of_bedrooms %>
+    <%= form.text_field :num_of_beds, type: 'Number of Bedrooms' %>
   </div>
 
   <div class="text-field">
-    <%= form.label :end_date %>
-    <%= form.date_field :end_date, type: 'Check-Out' %>
+    <%= form.label :num_of_bathrooms %>
+    <%= form.text_field :num_of_bathrooms, type: 'Number of Bathrooms' %>
   </div>
 
 
