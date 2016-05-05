@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
-  get 'static/home'
 
-  get 'sessions/new'
+  get 'reservations/new'
+
+  resources :listings
+  # get 'listings/new'
+
+  # get 'static/home'
+  # get 'sessions/new'
+
   root 'sessions#new'
+
+  # Makes SIGN-UP the landing page
+  # root 'clearance/users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

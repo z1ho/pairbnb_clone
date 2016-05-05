@@ -5,7 +5,7 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
+  <!-- <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
     <nav>
       <ul class="nav navbar-nav navbar-right">
@@ -16,12 +16,13 @@
       </ul>
     </nav>
   </div>
-  </header>
+  </header> -->
 
 
   <div id="header">
     <% if signed_in? -%>
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
+      <%= link_to "Show All Listings", listings_path, class: "button" %>
     <% else -%>
       <%= link_to t(".sign_in"), sign_in_path %>
     <% end -%>

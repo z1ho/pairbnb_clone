@@ -1,0 +1,58 @@
+<h1>Listings#New</h1>
+
+<p>Welcome back!</p>
+
+<h3>Add a Listing</h3>
+
+<%= form_for :listing, url: new_listing_path do |form| %>
+  <div class="text-field">
+    <%= form.label :name %>
+    <%= form.text_field :name, type: 'Name of Listing' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :description %>
+    <%= form.text_field :description, type: 'Description of listing' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :country %>
+    <%= form.text_field :country, type: 'Country' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :city %>
+    <%= form.text_field :city, type: 'City' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :room_type %>
+    <%= form.text_field :room_type, type: 'Room Type' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :property_type %>
+    <%= form.text_field :property_type, type: 'Property Type' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :accomodates %>
+    <%= form.text_field :accomodates, type: 'Accomodates' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date, type: 'Check-In' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date, type: 'Check-Out' %>
+  </div>
+
+
+  <div class="submit-field">
+    <%= form.submit %>
+  </div>
+
+<% end %>
