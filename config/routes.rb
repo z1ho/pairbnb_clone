@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
 
+  # USERS
+  
+  # FACEBOOK SIGN-IN
+  root 'sessions#new'
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth", as: "callback"
+  resources :users, only: [:show, :edit, :update, :destroy]
+
+
+  # RESERVATIONS
   get 'reservations/new'
 
+  # LISTINGS
   resources :listings
-  # get 'listings/new'
-
+ 
   get 'static/home'
-  # get 'sessions/new'
 
-  root 'sessions#new'
+ 
 
   # Makes SIGN-UP the landing page
   # root 'clearance/users#new'

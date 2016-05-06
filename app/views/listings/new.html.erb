@@ -1,6 +1,6 @@
 <h1>Listings#New</h1>
 
-<p>Welcome back <b><%= current_user.first_name %></b>!</p>
+<p>Welcome back <b></b>!</p>
 
 <h3>Add a Listing</h3>
 
@@ -30,17 +30,19 @@
     <%= form.text_field :address, type: 'Address' %>
   </div>
 
-  <% form_for @article do |f| %>
-  <%= f.text_field :name %>
-  <%= f.collection_select :room_type, Article::ROOMTYPES, :to_s, :to_s,
-       :include_blank => true
-  %>
-  <%= f.submit "Submit!" %>
-  <% end %>
+  <div class="text-field">
+    <%= form.label :room_type %>
+    <%= form.text_field :room_type, type: 'Room Type' %>
+  </div>
 
   <div class="text-field">
     <%= form.label :property_type %>
-    <%= form.text_field :property_type, type: 'Property Type' %>
+    <%= form.select :property_type, options_for_select(
+    
+      [["Apartmentt", "apartment"], 
+      ["Igloo", "igloo"]]
+
+      ) %>
   </div>
 
   <div class="text-field">

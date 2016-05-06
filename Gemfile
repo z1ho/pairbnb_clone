@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
-# Figaro
-gem 'figaro'
+# Omniauth gem
+gem 'omniauth'
+# Facebook Log-in
+gem 'omniauth-facebook'
 
+# Figaro gem
+gem 'figaro'
 # Clearance gem
 gem 'clearance'
 

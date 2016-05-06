@@ -1,7 +1,9 @@
-<h2>This is Sessions#New</h2>
+<h1>Welcome to zBnB</h1>
+<p>This is Sessions#New</p>
 <div id="clearance" class="sign-in">
   <h2><%= t(".title") %></h2>
 
+  <%= link_to "Sign In with Facebook", "auth/facebook" %>
   <%= render partial: '/sessions/form' %>
 
 </div>
