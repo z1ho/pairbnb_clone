@@ -31,6 +31,16 @@ class Clearance::UsersController < Clearance::BaseController
   def edit
     @user =  User.find(params[:id])
   end
+
+  def update
+    @user = User.find(params[:id])
+
+      if @user.update(user_from_params)
+        redirect_to user_path(@user)
+      else
+        flash[:warning] = "NOOOO"
+      end
+  end
   
   private
 

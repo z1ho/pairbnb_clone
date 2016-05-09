@@ -13,6 +13,10 @@
   <p><b>Number of Bedrooms: </b><%= x.num_of_beds %></p>
   <p><b>Number of Bathrooms: </b><%= x.num_of_bathrooms %></p>
   <p><b>Hosted By: </b><%= x.user.first_name %> <%= x.user.last_name %></p>
-  <p><%= link_to "Make a Reservation"%></p>
-  <hr />
+
+  <% if @user.id == x.user_id%>
+    <p><%= link_to "Delete Listing", listing_path(x.id), method: "delete" %></p>
+  <% else %>
+    <p><%= link_to "Make a Reservation", "#" %></p>
+  <% end %><hr/>
 <% end %>

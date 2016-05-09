@@ -23,7 +23,7 @@
         <% if signed_in? -%>
           <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
           <%= link_to "Home |", static_home_path, class: "link" %>
-          <%= link_to "Show All Listings |", listings_path, class: "button" %>
+          <%= link_to "View All Listings |", listings_path, class: "button" %>
           <%= link_to "Add a Listing |", new_listing_path, class: "button" %>
         <% else -%>
           <%= link_to t(".sign_in"), sign_in_path %>
