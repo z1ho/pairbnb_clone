@@ -1,1 +1,27 @@
-<h2><u>Edit Your Listing<u></h2>
+<head>
+  <title>Edit Listing</title>
+</head>
+
+<body>
+    <h1><u>Edit Your Listing<u></h1>
+
+    <%= form_for @listing do |l| %>
+
+    	<%= l.label :name %>
+    	<%= l.text_field :name, type: "Name" %><br />
+
+    	<%= l.label :description %>
+    	<%= l.text_field :description, type: "Description" %><br />
+
+        <%= l.label :country %>
+        <%= l.text_field :country, type: 'Country' %><br />
+
+        <%= l.label :city %>
+        <%= l.text_field :city, type: 'City' %><br />
+
+        <%= l.label :address %>
+        <%= l.text_field :address, type: 'Address' %><br />
+
+        <%= l.submit %>
+    <% end %>
+</body>

@@ -43,6 +43,7 @@ Rails.application.routes.draw do
 
   # LISTINGS
   resources :listings
+  # , only: [:show, :edit, :update, :destroy]
 
   # RESERVATIONS
   get 'reservations/new'

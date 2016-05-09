@@ -1,53 +1,56 @@
-<h1>Listings#New</h1>
+<head>
+  <title>Add A Listing</title>
+</head>
 
-<p>Welcome back <b></b>!</p>
+<body>
+  <h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
+  <h1>Add a Listing</h1>
+  <div class="listing_form">
+  <%= form_for @listing do |form| %>
 
-<h3>Add a Listing</h3>
-<div class="listing_form">
-<%= form_for @listing do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name, type: 'Name of Listing' %><br />
 
-    <%= form.label :name %>
-    <%= form.text_field :name, type: 'Name of Listing' %><br />
+      <%= form.label :description %>
+      <%= form.text_area :description, type: 'Description of listing' %><br />
 
-    <%= form.label :description %>
-    <%= form.text_area :description, type: 'Description of listing' %><br />
+      <%= form.label :country %>
+      <%= form.text_field :country, type: 'Country' %><br />
 
-    <%= form.label :country %>
-    <%= form.text_field :country, type: 'Country' %><br />
+      <%= form.label :city %>
+      <%= form.text_field :city, type: 'City' %><br />
 
-    <%= form.label :city %>
-    <%= form.text_field :city, type: 'City' %><br />
+      <%= form.label :address %>
+      <%= form.text_field :address, type: 'Address' %><br />
 
-    <%= form.label :address %>
-    <%= form.text_field :address, type: 'Address' %><br />
+      <%= form.label :room_type %>
+      <%= form.select :room_type, options_for_select(
+      
+        [["Entire Home/Apt", "Entire Home/Apt"], 
+        ["Private Room", "Private Room"],
+        ["Shared Room", "Shared Room"]]
+        ) %><br />
 
-    <%= form.label :room_type %>
-    <%= form.select :room_type, options_for_select(
-    
-      [["Entire Home/Apt", "Entire Home/Apt"], 
-      ["Private Room", "Private Room"],
-      ["Shared Room", "Shared Room"]]
-      ) %><br />
+      <%= form.label :property_type %>
+      <%= form.select :property_type, options_for_select(
+      
+        [["Apartment", "Apartment"],
+        ["Cave", "Cave"],
+        ["Villa", "Villa"],
+        ["Mansion", "Mansion"], 
+        ["Igloo", "Igloo"]]
+        ) %><br />
 
-    <%= form.label :property_type %>
-    <%= form.select :property_type, options_for_select(
-    
-      [["Apartment", "Apartment"],
-      ["Cave", "Cave"],
-      ["Villa", "Villa"],
-      ["Mansion", "Mansion"], 
-      ["Igloo", "Igloo"]]
-      ) %><br />
+      <%= form.label :accomodates %>
+      <%= form.text_field :accomodates, type: 'Accomodates' %><br />
 
-    <%= form.label :accomodates %>
-    <%= form.text_field :accomodates, type: 'Accomodates' %><br />
+      <%= form.label :num_of_bedrooms %>
+      <%= form.text_field :num_of_beds, type: 'Number of Bedrooms' %><br />
 
-    <%= form.label :num_of_bedrooms %>
-    <%= form.text_field :num_of_beds, type: 'Number of Bedrooms' %><br />
+      <%= form.label :num_of_bathrooms %>
+      <%= form.text_field :num_of_bathrooms, type: 'Number of Bathrooms' %><br />
 
-    <%= form.label :num_of_bathrooms %>
-    <%= form.text_field :num_of_bathrooms, type: 'Number of Bathrooms' %><br />
-
-    <%= form.submit %>
-<% end %>
-</div>
+      <%= form.submit %>
+  <% end %>
+  </div>
+</body>

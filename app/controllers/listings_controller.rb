@@ -12,10 +12,24 @@ class ListingsController < ApplicationController
     @listing = Listing.new
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
   def create
     @listing = current_user.listings.new(listing_params)
     @listing.save
     redirect_to listings_path
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+      if @listing.update(listing_params)
+        redirect_to listings_path
+      else
+        flash[:warning] = "Error"  
+        render :edit
+      end      
   end
 
   def destroy

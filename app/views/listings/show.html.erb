@@ -1,15 +1,22 @@
-<h1>Listings#Show</h1>
+<head>
+	<title><%= @listing.name %> hosted by <%= @listing.user.first_name %> <%= @listing.user.last_name %></title>
+</head>
 
-<h2>Here is the SPECIFIC Listing </h2>
+<body>
 
-<h2><%= @listing.name %></h2>
-<p><b>Description: </b></p><%= @listing.description %>
-<p><b>Country: </b><%= @listing.country %></p>
-<p><b>City: </b><%= @listing.city %></p>
-<p><b>Address: </b><%= @listing.address %></p>
-<p><b>Room Type: </b><%= @listing.room_type %></p>
-<p><b>Property Type: </b><%= @listing.property_type %></p>
-<p><b>Accomodates: </b><%= @listing.accomodates %></p>
-<p><b>Number of Bedrooms: </b><%= @listing.num_of_beds %></p>
-<p><b>Number of Bathrooms: </b><%= @listing.num_of_bathrooms %></p>
-<p><b>Hosted By: </b><%= @listing.user.first_name %> <%= @listing.user.last_name %></p>
+	<h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
+
+	<h2><%= @listing.name %></h2>
+	<p><b>Description: </b></p><%= @listing.description %><br>
+	<p><b>Country: </b><%= @listing.country %></p><br>
+	<p><b>City: </b><%= @listing.city %></p><br>
+	<p><b>Address: </b><%= @listing.address %></p><br>
+	<p><b>Room Type: </b><%= @listing.room_type %></p><br>
+	<p><b>Property Type: </b><%= @listing.property_type %></p><br>
+	<p><b>Accomodates: </b><%= @listing.accomodates %></p><br>
+	<p><b>Number of Bedrooms: </b><%= @listing.num_of_beds %></p><br>
+	<p><b>Number of Bathrooms: </b><%= @listing.num_of_bathrooms %></p><br>
+	<% @full_name = @listing.user.first_name + " " + @listing.user.last_name %>
+	<p><b>Hosted By: </b><%= link_to "#{@full_name}", user_path(@listing.user_id) %></p><br>
+
+</body>

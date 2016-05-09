@@ -1,5 +1,13 @@
-<% if current_user %>
-	<h2>Profile Page</h2>
-	<p><b>Name: </b><%= current_user.first_name %> <%= current_user.last_name %></p>
-	<%= link_to "Edit Profile", edit_user_path(@user) if current_user == @user %>
-<%end %>
+<head>
+	<title><%= @user.first_name %> <%= @user.last_name %>'s Profile</title>
+</head>
+
+<body>
+
+	<% if current_user %>
+		<h1>Profile Page</h1>
+		<p><b>Name: </b><%= current_user.first_name %> <%= current_user.last_name %></p>
+		<%= link_to "Edit Profile", edit_user_path(@user) if current_user == @user %>
+	<%end %>
+
+</body>

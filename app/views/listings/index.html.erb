@@ -1,22 +1,31 @@
-<h3>Welcome back <b><%= current_user.first_name %></b>!</h3>
-<h2>These are all the listings</h2>
+<head>
+  <title>Getaways</title>
+</head>
 
-<% @listings.each do |x| %>
-  <h2></b><%= link_to x.name, x %></h2>
-  <p><b>Description of Listing: </b><%= x.description %></p>
-  <p><b>Country: </b><%= x.country %></p>
-  <p><b>City: </b><%= x.city %></p>
-  <p><b>Address: </b><%= x.address %></p>
-  <p><b>Room Type: </b><%= x.room_type %></p>
-  <p><b>Property Type: </b><%= x.property_type %></p>
-  <p><b>Accomodates: </b><%= x.accomodates %></p>
-  <p><b>Number of Bedrooms: </b><%= x.num_of_beds %></p>
-  <p><b>Number of Bathrooms: </b><%= x.num_of_bathrooms %></p>
-  <p><b>Hosted By: </b><%= x.user.first_name %> <%= x.user.last_name %></p>
+<body>
+  <h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
+  <h1><u>Getaways</u></h1>
+  <% @listings = Listing.order(updated_at: :desc) %>
+    <% @listings.each do |l| %>
+      <h2></b><%= link_to l.name, l %></h2>
+      <p><b>Description of Listing: </b><%= l.description %></p>
+      <p><b>Country: </b><%= l.country %></p>
+      <p><b>City: </b><%= l.city %></p>
+      <p><b>Address: </b><%= l.address %></p>
+      <p><b>Room Type: </b><%= l.room_type %></p>
+      <p><b>Property Type: </b><%= l.property_type %></p>
+      <p><b>Accomodates: </b><%= l.accomodates %></p>
+      <p><b>Number of Bedrooms: </b><%= l.num_of_beds %></p>
+      <p><b>Number of Bathrooms: </b><%= l.num_of_bathrooms %></p>
+      <p><b>Hosted By: </b><%= l.user.first_name %> <%= l.user.last_name %></p>
 
-  <% if @user.id == x.user_id%>
-    <p><%= link_to "Delete Listing", listing_path(x.id), method: "delete" %></p>
-  <% else %>
-    <p><%= link_to "Make a Reservation", "#" %></p>
-  <% end %><hr/>
-<% end %>
+      <% if @user.id == l.user_id%>
+        <p><%= link_to "Delete Listing", listing_path(l.id), method: "delete" %></p>
+        <span><p><%= link_to "Edit Listing", edit_listing_path(l.id), method: "edit" %></p></span>
+      <% else %>
+        <p><%= link_to "Make a Reservation", "#" %></p>
+      <% end %><hr/>
+    <% end %>
+    
+</body>
+
