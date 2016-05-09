@@ -1,22 +1,52 @@
+# Rails.application.routes.draw do
+#   resources :listings
+
+#   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
+#   resource :session, controller: "clearance/sessions", only: [:create]
+
+#   resources :users, controller: "clearance/users", only: [:create] do
+#     resource :password,
+#       controller: "clearance/passwords",
+#       only: [:create, :edit, :update]
+#   end
+
+#   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
+#   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+#   get "/sign_up" => "clearance/users#new", as: "sign_up"
+#   get 'welcome/index'
+#   resources :users, only: [:show, :edit, :update, :destroy] 
+  
+#   root 'welcome#index'
+#   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+  
+
 Rails.application.routes.draw do
 
-  # USERS
-  
-  # FACEBOOK SIGN-IN
+  # Landing Page
   root 'sessions#new'
+
+  # Post SIGN-IN redirect to Homepage
+  get 'static/home'
+
+  # USERS
+  resources :users, only: [:show, :edit, :update, :destroy]
+  
+  # PROFILE
+  get '/profile', to: "users#profile", as: "my_profile"
+
+  # FACEBOOK SIGN-IN
   get "/auth/:provider/callback" => "sessions#create_from_omniauth", as: "callback"
   resources :users, only: [:show, :edit, :update, :destroy]
 
+  # SESSIONS
+  get 'sessions/show'
+
+  # LISTINGS
+  resources :listings
 
   # RESERVATIONS
   get 'reservations/new'
 
-  # LISTINGS
-  resources :listings
- 
-  get 'static/home'
-
- 
 
   # Makes SIGN-UP the landing page
   # root 'clearance/users#new'

@@ -1,6 +1,15 @@
 <h1>Listings#Show</h1>
 
-<h2>Here are all the listings </h2>
+<h2>Here is the SPECIFIC Listing </h2>
 
-<p><b>Name: </b></p><%= @listing.name %>
+<h2><%= @listing.name %></h2>
 <p><b>Description: </b></p><%= @listing.description %>
+<p><b>Country: </b><%= @listing.country %></p>
+<p><b>City: </b><%= @listing.city %></p>
+<p><b>Address: </b><%= @listing.address %></p>
+<p><b>Room Type: </b><%= @listing.room_type %></p>
+<p><b>Property Type: </b><%= @listing.property_type %></p>
+<p><b>Accomodates: </b><%= @listing.accomodates %></p>
+<p><b>Number of Bedrooms: </b><%= @listing.num_of_beds %></p>
+<p><b>Number of Bathrooms: </b><%= @listing.num_of_bathrooms %></p>
+<p><b>Hosted By: </b><%= @listing.user.first_name %> <%= @listing.user.last_name %></p>

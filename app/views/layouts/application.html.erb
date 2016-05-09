@@ -1,48 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application' %>
+  <%= csrf_meta_tag %>
+  <!-- Viewport i.e. user's terminal/device. Initial scale means DO NOT ZOOM  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> 
+</head>
 <body>
-  <!-- <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Host",   '#' %></li>
-        <li><%= link_to "Message",   '#' %></li>
-        <li><%= link_to "Help", '#' %></li>
-        <li><%= link_to "Your Profile", '#' %></li>
-      </ul>
-    </nav>
+
+  <div class="col-xs-12">
+
+    <%= render partial: "layouts/navbar" %>
+    <br><br><br>
+    
+    <center>
+      <div id="header">
+        <% if signed_in? -%>
+          <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
+          <%= link_to "Home |", static_home_path, class: "link" %>
+          <%= link_to "Show All Listings |", listings_path, class: "button" %>
+          <%= link_to "Add a Listing |", new_listing_path, class: "button" %>
+        <% else -%>
+          <%= link_to t(".sign_in"), sign_in_path %>
+        <% end -%>
+      </div>
+      <div id="flash">
+        <% flash.each do |key, value| -%>
+        <div id="flash_<%= key %>"><%=h value %></div>
+        <% end %>
+      </div>
+    </center>
+    <br><br>
+    <%= yield %>
   </div>
-  </header> -->
-
-
-  <div id="header">
-    <% if signed_in? -%>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-      <%= link_to "Home", static_home_path, class: "link" %>
-      <%= link_to "Show All Listings", listings_path, class: "button" %>
-      <%= link_to "Add a Listing", new_listing_path, class: "button" %>
-
-    <% else -%>
-      <%= link_to t(".sign_in"), sign_in_path %>
-    <% end -%>
-  </div>
-
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
-    <% end %>
-  </div>
-
-  <%= yield %>
 </body>
 </html>
+
+
+

@@ -24,6 +24,14 @@ class Clearance::UsersController < Clearance::BaseController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def edit
+    @user =  User.find(params[:id])
+  end
+  
   private
 
   def avoid_sign_in

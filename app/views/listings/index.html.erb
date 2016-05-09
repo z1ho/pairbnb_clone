@@ -2,7 +2,7 @@
 <h2>These are all the listings</h2>
 
 <% @listings.each do |x| %>
-  <p><b>Name of Listing: </b><%= x.name %></p>
+  <h2></b><%= link_to x.name, x %></h2>
   <p><b>Description of Listing: </b><%= x.description %></p>
   <p><b>Country: </b><%= x.country %></p>
   <p><b>City: </b><%= x.city %></p>
@@ -13,4 +13,6 @@
   <p><b>Number of Bedrooms: </b><%= x.num_of_beds %></p>
   <p><b>Number of Bathrooms: </b><%= x.num_of_bathrooms %></p>
   <p><b>Hosted By: </b><%= x.user.first_name %> <%= x.user.last_name %></p>
+  <p><%= link_to "Make a Reservation"%></p>
+  <hr />
 <% end %>

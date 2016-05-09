@@ -1,9 +1,25 @@
-<h1>Welcome to zBnB</h1>
-<p>This is Sessions#New</p>
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body> <!-- #took out  style="text-align: center" -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Welcome to zBnB</h1>
+                        <div id="clearance" class="sign-in">
+		  				<h2><%= t(".title") %></h2>
+                        <%= render partial: '/sessions/form' %>
+                        <%= link_to "Sign In with Facebook", "auth/facebook" %>
+                    </div>
+                </div>
+            </div>
+        </header>
+		</div>
+	</body>
+</html>
 
-  <%= link_to "Sign In with Facebook", "auth/facebook" %>
-  <%= render partial: '/sessions/form' %>
 
-</div>
+
+      

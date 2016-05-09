@@ -1,4 +1,12 @@
 class ListingsController < ApplicationController
+  def index
+    @listings = Listing.all
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
   def new
     @listing = Listing.new
   end
@@ -7,14 +15,6 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.new(listing_params)
     @listing.save
     redirect_to listings_path
-  end
-
-  def index
-    @listings = Listing.all
-  end
-
-  def show
-    @listings = Listing.all
   end
 
   private

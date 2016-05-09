@@ -3,66 +3,52 @@
 <p>Welcome back <b></b>!</p>
 
 <h3>Add a Listing</h3>
-
+<div class="listing_form">
 <%= form_for @listing do |form| %>
-  <div class="text-field">
+
     <%= form.label :name %>
-    <%= form.text_field :name, type: 'Name of Listing' %>
-  </div>
+    <%= form.text_field :name, type: 'Name of Listing' %><br />
 
-  <div class="text-field">
     <%= form.label :description %>
-    <%= form.text_field :description, type: 'Description of listing' %>
-  </div>
+    <%= form.text_area :description, type: 'Description of listing' %><br />
 
-  <div class="text-field">
     <%= form.label :country %>
-    <%= form.text_field :country, type: 'Country' %>
-  </div>
+    <%= form.text_field :country, type: 'Country' %><br />
 
-  <div class="text-field">
     <%= form.label :city %>
-    <%= form.text_field :city, type: 'City' %>
-  </div>
+    <%= form.text_field :city, type: 'City' %><br />
 
-  <div class="text-field">
     <%= form.label :address %>
-    <%= form.text_field :address, type: 'Address' %>
-  </div>
+    <%= form.text_field :address, type: 'Address' %><br />
 
-  <div class="text-field">
     <%= form.label :room_type %>
-    <%= form.text_field :room_type, type: 'Room Type' %>
-  </div>
+    <%= form.select :room_type, options_for_select(
+    
+      [["Entire Home/Apt", "Entire Home/Apt"], 
+      ["Private Room", "Private Room"],
+      ["Shared Room", "Shared Room"]]
+      ) %><br />
 
-  <div class="text-field">
     <%= form.label :property_type %>
     <%= form.select :property_type, options_for_select(
     
-      [["Apartmentt", "apartment"], 
-      ["Igloo", "igloo"]]
+      [["Apartment", "Apartment"],
+      ["Cave", "Cave"],
+      ["Villa", "Villa"],
+      ["Mansion", "Mansion"], 
+      ["Igloo", "Igloo"]]
+      ) %><br />
 
-      ) %>
-  </div>
-
-  <div class="text-field">
     <%= form.label :accomodates %>
-    <%= form.text_field :accomodates, type: 'Accomodates' %>
-  </div>
+    <%= form.text_field :accomodates, type: 'Accomodates' %><br />
 
-  <div class="text-field">
     <%= form.label :num_of_bedrooms %>
-    <%= form.text_field :num_of_beds, type: 'Number of Bedrooms' %>
-  </div>
+    <%= form.text_field :num_of_beds, type: 'Number of Bedrooms' %><br />
 
-  <div class="text-field">
     <%= form.label :num_of_bathrooms %>
-    <%= form.text_field :num_of_bathrooms, type: 'Number of Bathrooms' %>
-  </div>
+    <%= form.text_field :num_of_bathrooms, type: 'Number of Bathrooms' %><br />
 
-
-  <div class="submit-field">
     <%= form.submit %>
-  </div>
+</div>
 
 <% end %>

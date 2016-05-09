@@ -18,8 +18,9 @@
   <%= form.password_field :password %>
 </div>
 
-<div class="date-field">
-  <%= form.date_select :birthday , start_year: Date.today.year-100, end_year: Date.today.year%>
+<div class="text-field">
+  <%= form.label :birthday %>
+  <%= form.date_field(:birthday) %>
 </div>
 
 <div>

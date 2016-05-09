@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><h2><u>Edit Your Profile</u></h2></title>
+</head>
+
+<body>
+	<% @users.each do |u| %>
+	<p><b>First Name: </b><%= u.first_name %></p>
+	<p><b>Last Name: </b><%= u.last_name %></p>
+	<p><b>Gender: </b><%= u. gender %></p>
+	<p><b>Email: </b><%= u.email %></p>
+	<p><b>Birthday: </b><%= u.birthday %></p>
+	<p><b>Date Created: </b><%= u.created_at %></p>
+	<p><b>Date Updated: </b><%= u.updated_at %></p>
+</body>
+</html>
