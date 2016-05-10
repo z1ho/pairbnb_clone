@@ -5,8 +5,10 @@
 <body>
   <h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
   <h1><u>Getaways</u></h1>
+
   <% @listings = Listing.order(updated_at: :desc) %>
     <% @listings.each do |l| %>
+
       <h2></b><%= link_to l.name, l %></h2>
       <p><b>Description of Listing: </b><%= l.description %></p>
       <p><b>Country: </b><%= l.country %></p>
@@ -20,11 +22,13 @@
       <p><b>Hosted By: </b><%= l.user.first_name %> <%= l.user.last_name %></p>
 
       <% if @user.id == l.user_id%>
-        <p><%= link_to "Delete Listing", listing_path(l.id), method: "delete" %></p>
-        <span><p><%= link_to "Edit Listing", edit_listing_path(l.id), method: "edit" %></p></span>
+        <%= link_to "Delete Listing", listing_path(l.id), method: "delete" %>
+        <%= "|" %>
+        <%= link_to "Edit Listing", edit_listing_path(l.id), method: "edit" %>
       <% else %>
-        <p><%= link_to "Make a Reservation", "#" %></p>
-      <% end %><hr/>
+        <%= link_to "Make a Reservation", "#" %>
+      <% end %>
+      <hr/>
     <% end %>
     
 </body>
