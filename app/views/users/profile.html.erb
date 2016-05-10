@@ -6,6 +6,9 @@
 
 	<% if current_user %>
 		<h1>Profile Page</h1>
+		<div class="avatar">
+			<img class="pic_image_circle" src="<%= @user.avatar %>" alt="User Profile Pic">
+		</div><br />
 		<p><b>Name: </b><%= current_user.first_name %> <%= current_user.last_name %></p>
 		<%= link_to "Edit Profile", edit_user_path(@user) if current_user == @user %>
 	<% end %>

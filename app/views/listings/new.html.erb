@@ -6,13 +6,14 @@
   <h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
   <h1>Add a Listing</h1>
   <div class="listing_form">
-  <%= form_for @listing do |l| %>
+    
+    <%= form_for @listing do |l| %>
 
       <%= l.label :name %>
       <%= l.text_field :name, type: 'Name of Listing' %><br />
 
       <%= l.label :description %>
-      <%= l.text_area :description, type: 'Description of listing' %><br />
+      <%= l.text_area :description, type: 'Description of Listing' %><br />
 
       <%= l.label :country %>
       <%= l.text_field :country, type: 'Country' %><br />
@@ -65,6 +66,6 @@
 
 
       <%= l.submit %>
-  <% end %>
+    <% end %>
   </div>
 </body>

@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
+# Carrierwave gem for Image Upload
+gem 'carrierwave'
 # Tag gem
 gem 'acts-as-taggable-on'
-
 # Omniauth gem
 gem 'omniauth'
 # Facebook Log-in
 gem 'omniauth-facebook'
-
 # Figaro gem
 gem 'figaro'
 # Clearance gem

@@ -23,6 +23,11 @@
   <%= form.date_field(:birthday) %>
 </div>
 
+<div class="text-field">
+  <%= form.label :about %>
+  <%= form.text_area(:about) %>
+</div>
+
 <div>
   <%= form.check_box :subscribe, value: 1 %>
   <%= label_tag(:subscribe, "Subscribe to Newsletter") %>

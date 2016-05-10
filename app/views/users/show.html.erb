@@ -5,7 +5,16 @@
 <body>
 
 	<h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1><br>
+
+	<div class="avatar">
+		<img class="pic_image_circle" src="<%= @user.avatar %>" alt="User Profile Pic">
+	</div><br />
+
 	<p><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></p>
+
+	<p><b>About: </b></p>
+
+	<p><b>Ratings: </b></p>
 
 	<% if @user != current_user %>
 		<%= link_to "Contact Host", "#" %>
