@@ -49,7 +49,7 @@ Rails.application.routes.draw do
   get 'reservations/new'
 
   # CATEGORIES
-  get 'tags/:tag', to: 'listing#index', as: :tag
+  get 'tags/:tag', to: 'listings#index', as: :tag
 
 
   # Makes SIGN-UP the landing page

@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
     @user = current_user
     if params[:tag]
       @listings = Listing.tagged_with(params[:tag])
+      # @listings.order(updated_at: :desc)
     else
       @listings = Listing.all
     end
