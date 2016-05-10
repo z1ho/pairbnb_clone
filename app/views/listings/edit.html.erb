@@ -22,6 +22,41 @@
       <%= l.label :address %>
       <%= l.text_field :address, type: 'Address' %><br />
 
+      <%= l.label :room_type %>
+      <%= l.select :room_type, options_for_select(
+      
+        [["Entire Home/Apt", "Entire Home/Apt"], 
+        ["Private Room", "Private Room"],
+        ["Shared Room", "Shared Room"]]
+        ) %><br />
+
+      <%= l.label :property_type %>
+      <%= l.select :property_type, options_for_select(
+      
+        [["Apartment", "Apartment"],
+        ["Cave", "Cave"],
+        ["Villa", "Villa"],
+        ["Mansion", "Mansion"], 
+        ["Igloo", "Igloo"]]
+        ) %><br />
+
+      <%= l.label :accomodates %>
+      <%= l.text_field :accomodates, type: 'Accomodates' %><br />
+
+      <%= l.label :num_of_bedrooms %>
+      <%= l.text_field :num_of_beds, type: 'Number of Bedrooms' %><br />
+
+      <%= l.label :num_of_bathrooms %>
+      <%= l.text_field :num_of_bathrooms, type: 'Number of Bathrooms' %><br />
+
+      <div class="field">
+        <%= l.label :tag_list, "Tags (separated by commas)" %>
+        <%= l.text_field :tag_list %>
+      </div><br />
+
+      <%= l.label :price %>
+      <%= l.number_field :price, type: 'Price Per Stay'%><br />
+
       <%= l.submit %>
 
     <% end %>

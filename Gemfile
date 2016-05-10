@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Tag gem
+gem 'acts-as-taggable-on'
+
 # Omniauth gem
 gem 'omniauth'
 # Facebook Log-in

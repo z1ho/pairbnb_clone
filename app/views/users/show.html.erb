@@ -6,5 +6,11 @@
 
 	<h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1><br>
 	<p><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></p>
+
+	<% if @user != current_user %>
+		<%= link_to "Contact Host", "#" %>
+	<% else %>
+		<%= link_to "Edit Profile", edit_user_path(@user) if current_user == @user %>
+	<% end %>
 	
 </body>

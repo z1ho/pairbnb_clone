@@ -16,6 +16,9 @@
 	<p><b>Accomodates: </b><%= @listing.accomodates %></p><br>
 	<p><b>Number of Bedrooms: </b><%= @listing.num_of_beds %></p><br>
 	<p><b>Number of Bathrooms: </b><%= @listing.num_of_bathrooms %></p><br>
+	<p><b>Categories: </b>
+    <%= raw @listing.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p><br>
+	<p><b>Price Per Stay: </b><%= @listing.price %></p><br>
 	<% @full_name = @listing.user.first_name + " " + @listing.user.last_name %>
 	<p><b>Hosted By: </b><%= link_to "#{@full_name}", user_path(@listing.user_id) %></p><br>
 
