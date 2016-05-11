@@ -46,14 +46,82 @@ html {
  	border-width: 3px;
 }
 
-/*.pic_image_circle_xs {
-	width: 5%;
-	height: 5%;
+.pic_image_circle_xs {
+	width: 7%;
+	height: 7%;
 	-webkit-border-radius: 50%;
  	-moz-border-radius: 50%;
  	border-radius: 50%;
 }
-*/
+
+.nav_body {
+	padding: 0;
+	margin: 0;
+	overflow-y: scroll;
+	font-family: 'Varela Round';
+	font-size: 18px;
+}
+
+.nav_wrapper {
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.nav {
+/*	background-color: #f14444;*/
+	background-color: #565a5c;
+	height: 70px;
+	width: 100%;
+}
+
+.nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: relative; 
+}
+
+.nav ul li {
+	 display: inline-block;
+}
+
+.nav ul li:hover {
+	background-color: #565a5c;  /* change this to change block color*/
+}
+
+.nav ul li a,visited {
+	color: #ccc;
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+
+}
+
+.nav ul li a:hover {
+	color: #fff; 
+
+}
+
+.nav ul li:hover ul {
+	display: block;
+}
+
+.nav ul ul {
+	display: none;
+	position: absolute; /* IMPT for fixing the bar*/
+	background-color: #565a5c;
+}
+
+.nav ul ul li {
+	display: block;
+	border-bottom: solid 1px;
+	border-color: #ccc;
+}
+
+
+
+/*
 
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
 nav.navbar-findcond a { color: #f14444; }
@@ -72,3 +140,4 @@ nav.navbar-findcond ul.dropdown-menu > li > a { color: #444; }
 nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #f14444; color: #fff; }
 nav.navbar-findcond span.badge { background: #f14444; font-weight: normal; font-size: 11px; margin: 0 4px; }
 nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
+*/

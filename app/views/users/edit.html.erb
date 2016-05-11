@@ -1,23 +1,26 @@
-<h1><u>Edit Your Profile</u></h2>
+<h1><u>Edit Your Profile</u></h1>
 
 <%= form_for @user do |u| %>
 
 	<%= u.label :first_name %>
- 	<%= u.text_field :first_name, type: 'First Name' %><br>
+ 	<%= u.text_field :first_name, type: 'First Name' %><br/>
 
 	<%= u.label :last_name %>
- 	<%= u.text_field :last_name, type: 'Last Name' %><br>
+ 	<%= u.text_field :last_name, type: 'Last Name' %><br/>
 
   <%= u.label :email %>
-  <%= u.text_field :email, type: 'Email' %><br>
+  <%= u.text_field :email, type: 'Email' %><br/>
 
   <%= u.label :birthday %>
-  <%= u.date_field(:birthday) %><br>
+  <%= u.date_field(:birthday) %><br/>
+
+  <%= u.label :about %>
+  <%= u.text_area(:about) %><br/>
 
   <%= u.check_box :subscribe, value: 1 %>
-  <%= label_tag(:subscribe, "Subscribe to Newsletter") %><br>
+  <%= label_tag(:subscribe, "Subscribe to Newsletter") %><br/>
 
-  <%= u.file_field :avatar %>
+  <%= u.file_field :avatar %></br/>
 
 	<%= u.submit %>
 

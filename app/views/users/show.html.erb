@@ -10,11 +10,13 @@
 		<img class="pic_image_circle" src="<%= @user.avatar %>" alt="User Profile Pic">
 	</div><br />
 
-	<p><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></p>
+	<div>
+		<h3><%= @user.first_name %> <%= @user.last_name %></h3>
 
-	<p><b>About: </b></p>
+		<p><b>About <%= @user.first_name%>: </b><%= @user.about %></p>
 
-	<p><b>Ratings: </b></p>
+		<p><b>Ratings: </b></p>
+	</div>
 
 	<% if @user != current_user %>
 		<%= link_to "Contact Host", "#" %>
