@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: ef0d36a7c195621d8d7d4c769a47a9aee6f64d95
+  specs:
+    carrierwave (0.11.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,12 +53,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.5)
-    carrierwave (0.11.2)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
-      mimemagic (>= 0.3.0)
     clearance (1.14.0)
       bcrypt
       email_validator (~> 1.4)
@@ -91,7 +94,7 @@ GEM
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
-    mimemagic (0.3.1)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.12.0)
@@ -183,12 +186,13 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   byebug
-  carrierwave
+  carrierwave!
   clearance
   coffee-rails (~> 4.1.0)
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  mini_magick
   omniauth
   omniauth-facebook
   pg (~> 0.15)

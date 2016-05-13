@@ -7,6 +7,15 @@
 	<h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
 
 	<h2><%= @listing.name %></h2>
+
+	<div class="image">
+		<% @listing.image.each do |image|%>
+		<%= image_tag image.thumb %>
+		<%= image_tag image %>
+		<%= image_tag image.unicorn %>
+		<% end %>
+	</div></br>
+
 	<p><b>Description: </b></p><%= @listing.description %><br>
 	<p><b>Country: </b><%= @listing.country %></p><br>
 	<p><b>City: </b><%= @listing.city %></p><br>

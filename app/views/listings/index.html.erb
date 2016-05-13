@@ -7,9 +7,9 @@
 
   <h1><u>Search By</u></h1>
 
+
   <div id="tag_cloud" style="width: 100%;">
-    <% tag_cloud Listing.tag_counts, %w[s m l] do |tag, css_class| %><%= " | " %>
-      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    <% tag_cloud Listing.tag_counts, %w[s m l] do |tag, css_class| %>#<%= link_to tag.name, tag_path(tag.name), class: css_class %><%= " | " %>
     <% end %>
   </div><hr>
 
@@ -53,6 +53,6 @@
     <% end %><hr/>
 
   <% end %>
-    
+
 </body>
 

@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 # Carrierwave gem for Image Upload
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
 # Tag gem
 gem 'acts-as-taggable-on'
 # Omniauth gem

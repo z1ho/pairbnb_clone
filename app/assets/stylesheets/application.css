@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
@@ -21,14 +22,16 @@ html {
   font-size: 11px;
   font-weight: 400;
   color: #333333;
-  
 }
 
-.container {
-	text-align: center;
-	font-family: 'Varela Round', sans-serif;
+/* ----- Carousel -----*/
+
+#myCarousel:hover {
+	opacity: 0.7;	
 }
 
+
+/* ----- Avatar -----*/
 .avatar {
 	position: relative;
 	margin-top: 15px;
@@ -46,82 +49,26 @@ html {
  	border-width: 3px;
 }
 
-.pic_image_circle_xs {
-	width: 7%;
-	height: 7%;
+.avatar-xs {
+	margin-left: 7px;
+	width: 30%;
+	height: 30%;
 	-webkit-border-radius: 50%;
  	-moz-border-radius: 50%;
  	border-radius: 50%;
 }
 
-.nav_body {
-	padding: 0;
-	margin: 0;
-	overflow-y: scroll;
-	font-family: 'Varela Round';
-	font-size: 18px;
+/* ----- Listing Image -----*/
+.image {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
 }
 
-.nav_wrapper {
-	width: 960px;
-	margin: 0 auto;
-	text-align: left;
+.dropdown-toggle-profile {
+	width: 200px;
+    padding-top: 15px; margin-top: -13px;
 }
-
-.nav {
-/*	background-color: #f14444;*/
-	background-color: #565a5c;
-	height: 70px;
-	width: 100%;
-}
-
-.nav ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	position: relative; 
-}
-
-.nav ul li {
-	 display: inline-block;
-}
-
-.nav ul li:hover {
-	background-color: #565a5c;  /* change this to change block color*/
-}
-
-.nav ul li a,visited {
-	color: #ccc;
-	display: block;
-	padding: 15px;
-	text-decoration: none;
-
-}
-
-.nav ul li a:hover {
-	color: #fff; 
-
-}
-
-.nav ul li:hover ul {
-	display: block;
-}
-
-.nav ul ul {
-	display: none;
-	position: absolute; /* IMPT for fixing the bar*/
-	background-color: #565a5c;
-}
-
-.nav ul ul li {
-	display: block;
-	border-bottom: solid 1px;
-	border-color: #ccc;
-}
-
-
-
-/*
 
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
 nav.navbar-findcond a { color: #f14444; }
