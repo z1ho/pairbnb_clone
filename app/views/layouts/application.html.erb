@@ -13,6 +13,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
   integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <!-- Include Required Prerequisites -->
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+ 
+  <!-- Include Date Range Picker -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
 </head>
 <body>
 
@@ -20,7 +28,7 @@
 
     <%= render partial: "layouts/navbar" %>
 
-    <br><br><br><br><br>
+    <br><br><br><br>
 
       <div id="header" style="text-align: right;">
         <% if signed_in? -%>
@@ -38,10 +46,10 @@
         <% end %>
       </div>
 
+    <br><br><br>
 
-
-    <br><br>
     <%= yield %>
+
   </div>
 </body>
 </html>

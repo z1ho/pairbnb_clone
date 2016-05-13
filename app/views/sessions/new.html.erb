@@ -6,67 +6,112 @@
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 
-
 <body> <!-- #took out  style="text-align: center" -->
-  <header class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div id="myCarousel" class="carousel slide" style="border-color: black;">
-          
-                <ol class="carousel-indicators">
-                  <li data-target= "#myCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target= "#myCarousel" data-slide-to="1"></li>
-                  <li data-target= "#myCarousel" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <%= image_tag("2.jpg")%> 
-                    
-                    <div class= "carousel-caption">
-                      <h3>Explore the World</h3>
-                    </div>
-                  </div> 
-
-                  <div class="item">
-                    <%= image_tag("3.jpeg")%> 
-                    <div class= "carousel-caption">
-                      <h3>Perfect Vacation Destinations</h3>
-                      <p>Find that ideal location</p>
-                    </div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="item active">
+           <%= image_tag("5.jpeg")%>
+            <div class= "carousel-caption">
+              <h3>Looking for a Weekend Getaway?</h3>
+              <p>Book now!</p>
+            </div>         
+        </div>
+        <div class="item">
+           <%= image_tag("2.jpg")%>
+            <div class= "carousel-caption">
+              <h3>Perfect Vacation Destinations</h3>
+              <p>Find Your Ideal Location</p>
+            </div> 
+        </div>
+        <div class="item">
+           <%= image_tag("6.jpg")%> 
+            <div class= "carousel-caption">
+              <h3>Explore the World</h3>
+              <p>Open Your Mind</p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" style="margin: 100px;"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right" style="margin: 100px;"></span></a>
+  </div>
+  <div class="search">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="form-section">
+            <div class="row">
+              <form role="form">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="sr-only" for="location">Location</label>
+                    <input type="email" class="form-control" id="location" placeholder="Where ?">
                   </div>
-
-                  <div class="item"> 
-                    <%= image_tag("4.jpeg")%> 
-                    <div class= "carousel-caption">
-                      <h3>Looking for a Weekend Getaway?</h3>
-                      <p>Book now!</p>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label class="sr-only" for="checkin">Check-In</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="checkin" placeholder="Check in">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                     </div>
                   </div>
                 </div>
-
-               <a class= "carousel-control left" href= "#myCarousel" data-slide= "prev"><span class= "icon-prev"></span>
-               </a> 
-
-               <a class= "carousel-control right" href= "#myCarousel" data-slide= "next"><span class= "icon-next"></span>
-               </a> 
-
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label class="sr-only" for="checkout">Check-Out</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="checkout" placeholder="Check out">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label class="sr-only" for="guest">Guest</label>
+                    <select id="guest" name="guest" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6 Guests</option>
+                        <option value="7">7 Guests</option>
+                        <option value="8">8 Guests</option>
+                        <option value="9">9 Guests</option>
+                        <option value="10">10 Guests</option>
+                        <option value="11">11 Guests</option>
+                        <option value="12">12 Guests</option>
+                        <option value="13">13 Guests</option>
+                        <option value="14">14 Guests</option>
+                        <option value="15">15 Guests</option>
+                        <option value="16">16+ Guests</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                <button type="submit" class="btn btn-default btn-primary">Book Now</button>
+                </div>
+              </form>
             </div>
-            <% if current_user %>
-            <% else %> 
-            <h1>Welcome to zBnB</h1>
-            <div id="clearance" class="sign-in">
-		          <h2><%= t(".title") %></h2>
-              <%= render partial: '/sessions/form' %>
-              <%= link_to "Sign In with Facebook", "auth/facebook" %>
-            </div>
-            <% end %>
-
           </div>
         </div>
-	   </div>
-  </header>
+      </div>
+    </div>
+  </div>
+  <% if current_user %>
+  <% else %> 
+  <br><br>
+  <div class="welcome_box">
+  <center>
+    <h1>Welcome to zBnB</h1>
+    <div id="clearance" class="sign-in">
+  		<h2><%= t(".title") %></h2>
+      <%= render partial: '/sessions/form' %>
+      <%= link_to "Sign In with Facebook", "auth/facebook" %>
+    </div>
+  <center>
+  </div>
+  <% end %>
 </body>
 </html>
 

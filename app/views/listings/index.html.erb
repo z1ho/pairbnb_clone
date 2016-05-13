@@ -3,7 +3,9 @@
 </head>
 
 <body>
+  <% if current_user %>
   <h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
+  <% end %>
 
   <h1><u>Search By</u></h1>
 
@@ -25,17 +27,11 @@
 
     <p><b>City: </b><%= l.city %></p>
 
-    <!-- <p><b>Address: </b><%= l.address %></p> -->
-
     <p><b>Room Type: </b><%= l.room_type %></p>
 
     <p><b>Property Type: </b><%= l.property_type %></p>
 
     <p><b>Accomodates: </b><%= l.accomodates %></p>
-
-<!--     <p><b>Number of Bedrooms: </b><%= l.num_of_beds %></p>
-
-    <p><b>Number of Bathrooms: </b><%= l.num_of_bathrooms %></p> -->
 
     <p><b>Categories: </b>
     <%= raw l.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
@@ -49,7 +45,7 @@
       <%= "|" %>
       <%= link_to "Edit Listing", edit_listing_path(l.id) %>
     <% else %>
-      <%= link_to "Make a Reservation", "#" %>
+
     <% end %><hr/>
 
   <% end %>

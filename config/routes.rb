@@ -42,11 +42,10 @@ Rails.application.routes.draw do
   get 'sessions/show'
 
   # LISTINGS
-  resources :listings
-  # , only: [:show, :edit, :update, :destroy]
+  resources :listings do
+    resources :reservations
+  end
 
-  # RESERVATIONS
-  get 'reservations/new'
 
   # CATEGORIES
   get 'tags/:tag', to: 'listings#index', as: :tag
