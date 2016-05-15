@@ -8,7 +8,9 @@ class ReservationsController < ApplicationController
 
   def index
     @listing = Listing.find(params[:listing_id])
-    @reserve = Reservation.all
+      unless current_user.reservations == nil
+       @reserve = Reservations.find(params[:id])
+      end
   end
 
   def show
@@ -36,10 +38,10 @@ class ReservationsController < ApplicationController
     # byebug
     if @reserve.save
       ReservationMailer.booking_email(@customer, @host, @reserve).deliver_now
-      redirect_to reservation_path(params[:listing_id], @reserve)
+      redirect_to listing_reservation_path(params[:listing_id], @reserve)
     else
       flash.now[:warning] = "Date is unavailable, perhaps another?"
-      render :index
+      render :show
     end
   end
 
@@ -60,7 +62,7 @@ class ReservationsController < ApplicationController
     redirect_to reservations_index_path
   end
 
-private
+  private
 
   def find_reservation
     @reserve = Reservation.find(params[:id])

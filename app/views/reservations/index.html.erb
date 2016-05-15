@@ -1,4 +1,6 @@
-<h1>Show a Specific Reservation</h1>
+<title><h1>All Your Reservations</h1></title>
+
+<h1>All Your Reservations</h1>
 
 <p>
 	<div>
@@ -16,50 +18,49 @@
 
 		<h2></b><%= link_to @listing.name, @listing %></h2>
 
-		<b>Description:</b>
+		<strong>Description:</strong>
 		<%= @listing.description %><br>
 
-		<b>Address:</b>
+		<strong>Address:</strong>
 		<%= @listing.address %><br>
 
-		<b>Property type:</b>
+		<strong>Property type:</strong>
 		<%= @listing.property_type %><br>
 
-		<b>Room:</b>
+		<strong>Room:</strong>
 		<%= @listing.room_type %><br>
 
-		<b>Bedrooms:</b>
+		<strong>Bedrooms:</strong>
 		<%= @listing.num_of_beds %><br>
 
-		<b>Bathrooms:</b>
+		<strong>Bathrooms:</strong>
 		<%= @listing.num_of_bathrooms %><br>
 
-		<b>Price:</b>
+		<strong>Price:</strong>
 		<%= @listing.price %><br>
 
-		<b>Tags:</b>
+		<strong>Tags:</strong>
 		<%= @listing.tag_list %><br>
-
-		<% @full_name = @listing.user.first_name + " " + @listing.user.last_name %>
-		<p><b>Hosted By: </b><%= link_to "#{@full_name}", user_path(@listing.user_id) %></p><br>
 
 	</div>
 </p>
 
 </hr>
 
+
+
 <table class="table" style="width:100%">
 	<tr>
-		<th><b>No.</b>
-		<th><b>Booking id number</b></th>
-		<th><b>Check in date</b></th>
-		<th><b>Check out date</b></th><br>
+		<th><strong>No.</strong>
+		<th><strong>Booking id number</strong></th>
+		<th><strong>Check in date</strong></th>
+		<th><strong>Check out date</strong></th><br>
 	</tr>
 
 	<tr>
 		<td>Number should be here</td>
 		<td><%= @reserve.id %></td>
-		<td><%= @reserve.start_date %></td>
-		<td><%= @reserve.end_date %></td><br>
+		<td><%= @reserve.check_in %></td>
+		<td><%= @reserve.check_out %></td><br>
 	</tr>
 </table>

@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
 
   # SESSIONS
-  get 'sessions/show'
+  # get 'sessions/show'
 
   # LISTINGS
   resources :listings do

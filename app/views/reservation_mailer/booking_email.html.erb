@@ -1,0 +1,19 @@
++<!DOCTYPE html>
+ +<html>
+ +  <head>
+ +    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+ +  </head>
+ +  <body>
+ +    <h1>Welcome to ZB&B, <%= @customer.first_name %></h1>
+ +    <p>
+ +      You have successfully book a place to stay with ZB&B,
+ +      your destination is: <%= @listing.name %>.<br>
+ +      check-in: <%= @reservation.start_date %><br>
+ +      check-out: <%= @reservation.end_date %><br>
+ +    </p>
+ +    <p>
+ +      Check your travel details here <%= @url %>.
+ +    </p>
+ +    <p>Have a great day at <%= @listing.name %>!</p>
+ +  </body>
+ +</html>
