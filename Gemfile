@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Sidekiq Gem
+gem 'sidekiq'
 # Braintree Gem for Payments 
 gem 'braintree'
 # Carrierwave Gem for Image Upload

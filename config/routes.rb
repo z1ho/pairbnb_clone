@@ -49,12 +49,15 @@ Rails.application.routes.draw do
     resources :reservations
   end
 
+  resources :reservations, only: [] do
+      resources :payments, only: [:new, :create]
+  end
+
   # CATEGORIES
   get 'tags/:tag', to: 'listings#index', as: :tag
 
   # PAYMENTS
-  resources :payments, only: [:new, :create]
-  get 'payments/new'
+  # get 'payments/new/:id', to: "payments#new"
 
   # Makes SIGN-UP the landing page
   # root 'clearance/users#new'

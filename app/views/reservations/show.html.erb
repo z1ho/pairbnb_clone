@@ -33,6 +33,9 @@
 		<% @full_name = @listing.user.first_name + " " + @listing.user.last_name %>
 		<p><b>Hosted By: </b><%= link_to "#{@full_name}", user_path(@listing.user_id) %></p><br>
 
+		<%= link_to 'Pay Now', new_reservation_payment_path(@reserve) %>
+<!-- 		 <a href="/payments/new/<%= @reserve.id %>"> Pay Now</a> -->
+
 	</div>
 </p>
 

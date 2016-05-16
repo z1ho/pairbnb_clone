@@ -101,23 +101,29 @@ a.right.carousel-control {
 /* ----- Sign-In -----*/
 
 div#clearance.sign-in {
-  padding-bottom: 50px;
+  padding-bottom: 150px;
+
 }
 
 /* ----- Footer -----*/
 
 div.footer {
   background-color: gray;
-  padding: 50px;
+  padding: 40px;
   bottom: 0;
+  margin-top: 50px;
+  position: fixed;
+  width: 100%;
+  border-top: solid;
+  border-color: #fff;
+
 }
 
 a.footer-btn {
   text-decoration: none;
-  padding: 0px 80px;
+  padding: 20px 80px;
   color: #fff;
   font-size: 15px;
-
 }
 
 /* ----- Avatar -----*/

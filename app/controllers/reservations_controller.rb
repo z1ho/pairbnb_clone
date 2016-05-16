@@ -35,8 +35,13 @@ class ReservationsController < ApplicationController
     @reserve.user_id = current_user.id
     @customer = @reserve.user
     @host = User.find(@reserve.listing.user_id)
+
+    @num_of_days = @reserve.end_date - @reserve.start_date
+    @num_of_days.to_i
+    @reserve.amount = @num_of_days.to_i * @reserve.listing.price
+
     if @reserve.save
-      ReservationMailer.booking_email(@customer.id, @host.id, @reserve.id).deliver_now
+      # ReservationJob.perform_later(@customer.id, @host.id, @reserve.id)
       redirect_to listing_reservation_path(params[:listing_id], @reserve)
     else
       flash.now[:warning] = "Date is unavailable, please try another date"

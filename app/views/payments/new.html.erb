@@ -1,24 +1,20 @@
-<h1>Payments#new</h1>
-<p>Find me in app/views/payments/new.html.erb</p>
+<center>
+    <div style="margin-top: 40px; width: 60%;">
+        <h3> Pay outstanding amount below </h3>
+        <form id="checkout" method="post" action="/reservations/<%= @reservation.id %>/payments">
+            <div id="payment-form"></div>
+            <input type="submit" value="Pay $<%= @reservation.amount %>">
+        </form>
 
-<h1>That's all for your order:</h1>
+        <script src="https://js.braintreegateway.com/js/braintree-2.24.0.min.js"></script>
 
-
-<%= form_for(@payment) do |p| %>
-
-  <div class="field">
-    <%= p.label :start_date %><br>
-    <%= @reservation.start_date %><br>
-  </div>
-  <div class="field">
-    <%= p.label :end_date %><br>
-    <%= @reservation.end_date %><br>
-  </div>
-  <div class="field">
-    <%= p.hidden_field :reservation_secure_token, value: @reservation.secure_token %><br>
-  </div>
-  <div class="actions">
-    <%= p.submit %>
-  </div>
-
-<% end %>
+        <script>
+            braintree.setup(
+    // Replace this with a client token from your server
+    "<%= @client_token %>",
+    "dropin", {
+        container: "payment-form"
+    });
+        </script>
+    </div>
+</center>
