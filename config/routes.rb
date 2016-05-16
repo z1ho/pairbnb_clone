@@ -1,4 +1,6 @@
 # Rails.application.routes.draw do
+
+
 #   resources :listings
 
 #   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -21,6 +23,7 @@
   
 
 Rails.application.routes.draw do
+
 
   # Landing Page
   root 'sessions#new'
@@ -46,10 +49,12 @@ Rails.application.routes.draw do
     resources :reservations
   end
 
-
   # CATEGORIES
   get 'tags/:tag', to: 'listings#index', as: :tag
 
+  # PAYMENTS
+  resources :payments, only: [:new, :create]
+  get 'payments/new'
 
   # Makes SIGN-UP the landing page
   # root 'clearance/users#new'

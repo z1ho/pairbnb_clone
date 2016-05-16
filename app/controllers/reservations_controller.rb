@@ -35,12 +35,11 @@ class ReservationsController < ApplicationController
     @reserve.user_id = current_user.id
     @customer = @reserve.user
     @host = User.find(@reserve.listing.user_id)
-    # byebug
     if @reserve.save
-      ReservationMailer.booking_email(@customer, @host, @reserve).deliver_now
+      ReservationMailer.booking_email(@customer.id, @host.id, @reserve.id).deliver_now
       redirect_to listing_reservation_path(params[:listing_id], @reserve)
     else
-      flash.now[:warning] = "Date is unavailable, perhaps another?"
+      flash.now[:warning] = "Date is unavailable, please try another date"
       render :show
     end
   end

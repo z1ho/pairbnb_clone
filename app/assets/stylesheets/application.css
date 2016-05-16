@@ -109,6 +109,7 @@ div#clearance.sign-in {
 div.footer {
   background-color: gray;
   padding: 50px;
+  bottom: 0;
 }
 
 a.footer-btn {

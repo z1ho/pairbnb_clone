@@ -1,0 +1,24 @@
+<h1>Payments#new</h1>
+<p>Find me in app/views/payments/new.html.erb</p>
+
+<h1>That's all for your order:</h1>
+
+
+<%= form_for(@payment) do |p| %>
+
+  <div class="field">
+    <%= p.label :start_date %><br>
+    <%= @reservation.start_date %><br>
+  </div>
+  <div class="field">
+    <%= p.label :end_date %><br>
+    <%= @reservation.end_date %><br>
+  </div>
+  <div class="field">
+    <%= p.hidden_field :reservation_secure_token, value: @reservation.secure_token %><br>
+  </div>
+  <div class="actions">
+    <%= p.submit %>
+  </div>
+
+<% end %>

@@ -2,17 +2,7 @@
 
 <p>
 	<div>
-		<div class="image carousel-list slide carousel-inner listing_image">
-			<%@listing.image.each.with_index do |x, i|%>
-				<% if i == 1 %>
-					<div class="item active">
-				<% else %>
-					<div class='item'>
-				<% end %>
-				<%= image_tag x.normal %>
-			</div>
-			<% end %>
-		</div>
+
 
 		<h2></b><%= link_to @listing.name, @listing %></h2>
 

@@ -1,20 +1,23 @@
 source 'https://rubygems.org'
 
-# Carrierwave gem for Image Upload
+# Braintree Gem for Payments 
+gem 'braintree'
+# Carrierwave Gem for Image Upload
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+# Mini Magick
 gem 'mini_magick'
-# Tag gem
+# Tag Gem
 gem 'acts-as-taggable-on'
-# Omniauth gem
+# Omniauth Gem
 gem 'omniauth'
 # Facebook Log-in
 gem 'omniauth-facebook'
-# Figaro gem
+# Figaro Gem
 gem 'figaro'
-# Clearance gem
+# Clearance Gem
 gem 'clearance'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Bundle edge Rails instead: Gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'

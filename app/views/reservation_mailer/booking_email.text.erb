@@ -1,12 +1,13 @@
 Welcome to ZB&B, <%= @customer.first_name %>
- ===============================================
- 
- You have successfully book a place to stay with shortstayz.com,
- 
-       your destination is: <%= @listing.name %>.
-       check-in: <%= @reservation.start_date %>.
-       check-out: <%= @reservation.end_date %>.
-  
- Check your travel details here <%= @url %>.
-  
- Have a great day at <%= @listing.name %>! 
+ =============================================== 
+
+Hi <%= @customer.first_name %>, thank you for choosing ZB&B!
+You have successfully booked your getaway, please see below for your reservation confirmation!
+     
+Your destination is: <%= @listing.name %>
+<% @full_name = @listing.user.first_name + " " + @listing.user.last_name %>
+Hosted By: <%= link_to "#{@full_name}", user_path(@listing.user_id) %>
+Check-in: <%= @reservation.start_date %>
+Check-out: <%= @reservation.end_date %>
+Check your travel details here: <%= @url %>
+Have a pleasant stay at <%= @listing.name %>!
