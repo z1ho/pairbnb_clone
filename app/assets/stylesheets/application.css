@@ -102,7 +102,6 @@ a.right.carousel-control {
 
 div#clearance.sign-in {
   padding-bottom: 150px;
-
 }
 
 /* ----- Footer -----*/
@@ -111,12 +110,11 @@ div.footer {
   background-color: gray;
   padding: 40px;
   bottom: 0;
-  margin-top: 50px;
+/*  margin-top: 50px;*/
   position: fixed;
   width: 100%;
-  border-top: solid;
-  border-color: #fff;
-
+/*  border-top: solid;*/
+/*  border-color: #fff;*/
 }
 
 a.footer-btn {
@@ -153,7 +151,7 @@ a.footer-btn {
  	border-radius: 50%;
 }
 
-/* ----- Listing Image -----*/
+/* ----- Images -----*/
 .image {
   position: relative;
   margin-top: 15px;
@@ -162,5 +160,187 @@ a.footer-btn {
 
 .dropdown-toggle-profile {
 	width: 200px;
-    padding-top: 15px; margin-top: -13px;
+  padding-top: 15px; margin-top: -13px;
 }
+
+section.recent-listings {
+  padding-bottom: 500px;
+}
+
+/* Homepage */
+img {             
+  width: 335px;
+  height: 344px;
+}
+
+h4.homepage-titles {
+  font-size: 80px;
+  color: #fff;
+}
+
+/* ----- Listing Index / Getaways -----*/
+div.getaways {
+  padding-bottom: 100px;
+}
+
+div.search {
+  padding-bottom: 100px
+}
+
+/* ----- Payments -----*/
+div.payment {
+  padding-bottom: 150px;
+}
+
+section.recent-listings {
+  text-align: center;
+}
+
+div.homepic {
+  display: inline-block;
+}
+/* ----- Grid -----*/
+
+/*.grid {
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 0 4em;
+  max-width: 750px;
+  list-style: none;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+*/
+
+/* Common style */
+/*.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 00px 1%;
+  min-width: 320px;
+  max-width: 480px;
+  max-height: 360px;
+  width: 48%;
+  background: #222222;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid figure img {
+  position: relative;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+.grid figure figcaption {
+  max-width:100%;
+  padding: 1.5em;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.15em;
+    -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  align-content: center;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100%;
+  text-align: center;
+  
+}
+
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+/*.grid figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.grid figure h2 {
+  word-spacing: -0.15em;
+  font-weight: 100;
+   position: relative;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+
+}
+
+.grid figure h2 span {
+  font-weight: 600;
+}
+
+.grid figure h2,
+.grid figure p {
+  margin: 0;
+}
+
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 50%;
+}
+
+/* Individual effects */
+/*
+figure.effect-ruby {
+background-color: #222222;
+}
+figure.effect-ruby img {
+opacity: 0.8;
+-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+transition: opacity 0.35s, transform 0.35s;
+-webkit-transform: scale(1.15);
+transform: scale(1.15);
+}
+figure.effect-ruby:hover img {
+opacity: 0.5;
+-webkit-transform: scale(1);
+transform: scale(1);
+}
+figure.effect-ruby h2 {
+margin-top: 20%;
+-webkit-transition: -webkit-transform 0.35s;
+transition: transform 0.35s;
+-webkit-transform: translate3d(0,20px,0);
+transform: translate3d(0,20px,0);
+text-align: center;
+
+}
+figure.effect-ruby p {
+margin: 1em 0 0;
+padding: 3em;
+border: 1px solid #fff;
+opacity: 0;
+text-align: center;
+-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+transition: opacity 0.35s, transform 0.35s;
+-webkit-transform: translate3d(0,20px,0) scale(1.1);
+transform: translate3d(0,20px,0) scale(1.1);
+}
+figure.effect-ruby:hover h2 {
+-webkit-transform: translate3d(0,0,0);
+transform: translate3d(0,0,0);
+}
+figure.effect-ruby:hover p {
+opacity: 1;
+-webkit-transform: translate3d(0,0,0) scale(1);
+transform: translate3d(0,0,0) scale(1);
+}*/

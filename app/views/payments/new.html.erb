@@ -1,5 +1,20 @@
 <center>
-    <div style="margin-top: 40px; width: 60%;">
+
+    <table class="table" style="width:100%">
+        <tr>
+            <th><b>Booking id number</b></th>
+            <th><b>Check in date</b></th>
+            <th><b>Check out date</b></th><br>
+        </tr>
+
+        <tr>
+            <td><%= @reservation.id %></td>
+            <td><%= @reservation.start_date %></td>
+            <td><%= @reservation.end_date %></td><br>
+        </tr>
+    </table>
+
+    <div class="payment" style="margin-top: 40px; width: 60%;">
         <h3> Pay outstanding amount below </h3>
         <form id="checkout" method="post" action="/reservations/<%= @reservation.id %>/payments">
             <div id="payment-form"></div>

@@ -2,8 +2,6 @@
 
 <p>
 	<div>
-
-
 		<h2></b><%= link_to @listing.name, @listing %></h2>
 
 		<b>Description:</b>
@@ -30,29 +28,16 @@
 		<b>Tags:</b>
 		<%= @listing.tag_list %><br>
 
+		<b>Total Price<b>
+
+
+
 		<% @full_name = @listing.user.first_name + " " + @listing.user.last_name %>
 		<p><b>Hosted By: </b><%= link_to "#{@full_name}", user_path(@listing.user_id) %></p><br>
 
-		<%= link_to 'Pay Now', new_reservation_payment_path(@reserve) %>
-<!-- 		 <a href="/payments/new/<%= @reserve.id %>"> Pay Now</a> -->
+		<%= link_to 'Proceed to Payment', new_reservation_payment_path(@reserve) %>
 
 	</div>
 </p>
-
 </hr>
 
-<table class="table" style="width:100%">
-	<tr>
-		<th><b>No.</b>
-		<th><b>Booking id number</b></th>
-		<th><b>Check in date</b></th>
-		<th><b>Check out date</b></th><br>
-	</tr>
-
-	<tr>
-		<td>Number should be here</td>
-		<td><%= @reserve.id %></td>
-		<td><%= @reserve.start_date %></td>
-		<td><%= @reserve.end_date %></td><br>
-	</tr>
-</table>

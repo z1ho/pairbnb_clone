@@ -34,6 +34,7 @@ class ListingsController < ApplicationController
     @listing.update(listing_params)
       if @listing.save
         redirect_to listings_path
+        flash[:success] = "Succesfully updated!"
       else
         flash[:warning] = "Error"  
         render :edit

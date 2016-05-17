@@ -6,4 +6,17 @@ class Listing < ActiveRecord::Base
   # attr_accessible :content, :name, :tag_list
   acts_as_taggable
   mount_uploaders :image, ImageUploader
+
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :country, presence: true
+  validates :city, presence: true
+  validates :address, presence: true
+  validates :room_type, presence: true
+  validates :property_type, presence: true
+  validates :accomodates, presence: true
+  validates :num_of_beds, presence: true
+  validates :num_of_bathrooms, presence: true
+  validates :price, presence: true
+
 end

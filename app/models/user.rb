@@ -6,6 +6,13 @@ class User < ActiveRecord::Base
 	has_many :authentications, :dependent => :destroy
   mount_uploader :avatar, AvatarUploader
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :gender, presence: true
+  validates :birthday, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|
       u.first_name = auth_hash["info"]["first_name"]

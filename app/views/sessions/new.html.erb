@@ -34,6 +34,7 @@
     <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
   </div>
+  
   <div class="search">
     <div class="container">
       <div class="row">
@@ -98,20 +99,40 @@
       </div>
     </div>
   </div>
+
   <% if current_user %>
   <% else %> 
-  <br><br>
-  <div class="welcome_box">
-  <center>
-    <h1>Welcome to zBnB</h1>
-    <div id="clearance" class="sign-in">
-  		<h2><%= t(".title") %></h2>
-      <%= render partial: '/sessions/form' %>
-      <%= link_to "Sign In with Facebook", "auth/facebook" %>
+    <br><br>
+    <div class="welcome_box">
+      <center>
+      <h1>Welcome to zBnB</h1>
+      <div id="clearance" class="sign-in">
+    		<h2><%= t(".title") %></h2>
+        <%= render partial: '/sessions/form' %>
+        <%= link_to "Sign In with Facebook", "auth/facebook" %>
+      </div>
+      <center>
     </div>
-  <center>
-  </div>
   <% end %>
+
+  <section class="recent-listings">
+  <center>
+    <h2>Recent Listings</h2>
+    <div class="homepic">
+      <div class="homepage_images">
+        <%= image_tag("iceland.jpg")%>
+        <h4 class="homepage_titles">Iceland</h4>
+      </div></br>
+
+      <div class="homepic">
+        <figure class="effect-ruby">
+        <img src="http://i.imgur.com/SpKoEEd.jpg" alt="The Ocean Thought Nothing"/>
+        <h4>The Ocean</h4>
+      </div>
+    </div>
+  </center>
+  </section>
+
 </body>
 </html>
 
