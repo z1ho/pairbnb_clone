@@ -1,6 +1,13 @@
 <div id="clearance" class="sign-up">
   <h2><%= t(".title") %></h2>
 
+  <ul class='alert alert-danger'>
+    Error!
+  <% @user.errors.full_messages.each do |f| %>
+    <li><%= f %></li>
+  <% end %>
+  </ul>
+  
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 

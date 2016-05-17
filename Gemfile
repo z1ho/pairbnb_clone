@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Elastic Search Gem
+gem 'searchkick'
 # Sidekiq Gem
 gem 'sidekiq'
 # Braintree Gem for Payments 

@@ -25,7 +25,6 @@ html {
 }
 
 /* ----- Nav Bar -----*/
-
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
 nav.navbar-findcond a { color: #f14444; }
 nav.navbar-findcond ul.navbar-nav a { color: #f14444; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
@@ -163,19 +162,31 @@ a.footer-btn {
   padding-top: 15px; margin-top: -13px;
 }
 
-section.recent-listings {
-  padding-bottom: 500px;
-}
-
 /* Homepage */
 img {             
   width: 335px;
   height: 344px;
 }
 
-h4.homepage-titles {
-  font-size: 80px;
-  color: #fff;
+h4.image-text {
+
+  font-size: 30px;
+  color: black;
+  position: absolute;
+  top: 300px;
+  left: 50px;
+}
+
+/*Aligns the pictures to the center*/
+section.recent-listings {
+  text-align: center;
+  padding-bottom: 200px;
+}
+
+div.homepic {
+  display: inline-block;
+  width: 335px;
+  height: 344px;
 }
 
 /* ----- Listing Index / Getaways -----*/
@@ -192,13 +203,13 @@ div.payment {
   padding-bottom: 150px;
 }
 
-section.recent-listings {
-  text-align: center;
+
+div.homepage_images-b {
+  width: 100;
+  height: 100;
 }
 
-div.homepic {
-  display: inline-block;
-}
+
 /* ----- Grid -----*/
 
 /*.grid {

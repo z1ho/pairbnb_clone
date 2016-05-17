@@ -1,0 +1,7 @@
+<p>Listing Search </p>
+
+<% @listings.each do |l| %>
+
+<%= link_to l.name, listing_path(l.id) %>
+
+<% end %>

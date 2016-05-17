@@ -19,7 +19,7 @@ class PaymentsController < ApplicationController
       @payment.save
       ReservationJob.perform_later(@reservation.user_id, @reservation.listing.user_id, @reservation.id)
       redirect_to static_home_path
-      flash[:success] = "Payment Successful!"
+      flash[:success] = "Payment Successful! Enjoy your vacation!"
     else
       redirect_to static_home_path 
       flash[:danger] = "Transaction failed, please check your details and try again"

@@ -66,17 +66,21 @@ class Clearance::UsersController < Clearance::BaseController
     first_name = user_params.delete(:first_name)
     last_name = user_params.delete(:last_name)
     email = user_params.delete(:email)
+    gender = user_params.delete(:gender)
     password = user_params.delete(:password)
     birthday = user_params.delete(:birthday)
     subscribe = user_params.delete(:subscribe)
+    about = user_params.delete(:about)
 
     Clearance.configuration.user_model.new(user_params).tap do |user|
       user.first_name = first_name
       user.last_name = last_name
       user.email = email
       user.password = password
+      user.gender = gender
       user.birthday = birthday
       user.subscribe = subscribe
+      user.about = about
     end
   end
 

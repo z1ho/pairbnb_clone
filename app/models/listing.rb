@@ -19,4 +19,6 @@ class Listing < ActiveRecord::Base
   validates :num_of_bathrooms, presence: true
   validates :price, presence: true
 
+  searchkick
+  
 end

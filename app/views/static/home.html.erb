@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Your Homepage</title>
+	<p><%= Time.now.strftime("%m/%d/%Y") %></p>
 </head>
 <body>
 	<h1>Homepage</h1>
@@ -9,15 +10,46 @@
 
 	<div class="avatar">
 		<img class="pic_image_circle" src="<%= current_user.avatar %>" alt="User Profile Pic">
-	</div><br />
+	</div><br/>
 
 	<%= link_to "Edit Profile", edit_user_path(@user) if current_user == @user %>
-	<h2>Your Trips</h2>
 
-		
+	<div>
+		<h2>Your Upcoming Trips</h2><br>	
+		<% byebug %>
+		<% @user_trips = Reservation.where(user_id: current_user) %>
+		<% @recent_trip = Reservation.order(created_at: :desc) %>
+		<% @recent_trip.each do |r|  %>
+		<% @current_time = Time.now.strftime("%m/%d/%Y") %>
 
-	<br><br><br><br>
-	<h2>Your Inbox</h2>
+		<% %>
+		<table style="width: 100%">
+			<tr>
+				<th><p><b>Reservation ID: </b></p></th>
+				<th><p><b>Listing ID: </b></p></th>
+				<th><p><b>Check-In Date: </b></p></th>
+				<th><p><b>Check-Out Date: </b></p></th>
+				<th><p><b>Amount Paid: </b></p></th>
+			</tr>
+
+			<tr>
+				<td><p><%= link_to "#{r.listing_id}" %></p></td>
+				<td><p><%= r.listing_id %></p></td>
+				<td><p><%= r.start_date %></p></td>
+				<td><p><%= r.end_date %></p></td>
+				<td><p><%= r.amount %></p></td>
+			</tr>
+
+			<!-- cancel reservations button -->
+		</table>
+		<% end %>
+	</div>
+
+	<div style="padding-bottom: 100px">
+		<h2>Your Previous Bookings</h2><br>
+
+	</div>
+
 </body>
 </html>
 

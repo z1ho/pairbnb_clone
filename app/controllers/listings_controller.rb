@@ -36,7 +36,7 @@ class ListingsController < ApplicationController
         redirect_to listings_path
         flash[:success] = "Succesfully updated!"
       else
-        flash[:warning] = "Error"  
+        flash[:warning] = "Error, no modifications made. Please try again."  
         render :edit
       end      
   end

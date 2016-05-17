@@ -36,6 +36,7 @@ class ReservationsController < ApplicationController
     @customer = @reserve.user
     @host = User.find(@reserve.listing.user_id)
 
+    #byebug
     @num_of_days = @reserve.end_date - @reserve.start_date
     @num_of_days.to_i
     @reserve.amount = @num_of_days.to_i * @reserve.listing.price
@@ -44,7 +45,7 @@ class ReservationsController < ApplicationController
       # ReservationJob.perform_later(@customer.id, @host.id, @reserve.id)
       redirect_to listing_reservation_path(params[:listing_id], @reserve)
     else
-      flash.now[:warning] = "Date is unavailable, please try another date"
+      flash.now[:danger] = "Date is unavailable, please try another date"
       render :show
     end
   end
@@ -56,7 +57,7 @@ class ReservationsController < ApplicationController
       if @reserve.update(reserve_params)
         redirect_to reservations_index_path
       else
-        flash[:warning] = "You sure bout this update?"
+        flash[:danger] = "Are you sure you want to do that?"
         render :index
       end
   end
