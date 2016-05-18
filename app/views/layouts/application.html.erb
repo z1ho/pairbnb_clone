@@ -36,6 +36,7 @@
           <%= link_to "Home |", static_home_path, class: "link" %>
           <%= link_to "View All Listings |", listings_path, class: "button" %>
           <%= link_to "Add a Listing |", new_listing_path, class: "button" %>
+          <p><b>Date: </b><%= Time.now.strftime("%Y-%m-%d") %></p>
         <% else -%>
           <%= link_to t(".sign_in"), sign_in_path %>
         <% end -%>

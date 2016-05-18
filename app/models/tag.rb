@@ -1,5 +1,12 @@
-class Tag < ActiveRecord::Base
-	belongs_to :listing
+require 'elasticsearch/model'
 
-  	searchkick
+class Tag < ActiveRecord::Base
+
+	belongs_to :listing
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
 end
+
+#to autosync model with elasticsearch
+Tag.import force: true

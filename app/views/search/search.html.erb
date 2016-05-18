@@ -1,7 +1,39 @@
-<p>Listing Search </p>
+<h1>Search</h1>
 
-<% @listings.each do |l| %>
-
-<%= link_to l.name, listing_path(l.id) %>
-
+<%= form_for search_path, method: :get do |f| %>
+  <p>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
 <% end %>
+
+<ul>
+  <% @listing.each do |listing| %>
+    <li>
+      <h3>
+        <%= link_to listing.name, controller: "listings", action: "show", id: listing.id%>
+      </h3>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @tagging.each do |tagging| %>
+    <li>
+      <h3>
+        <%= link_to tagging.name %>
+      </h3>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @tag.each do |tag| %>
+    <li>
+      <h3>
+        <%= link_to tag.name %>
+      </h3>
+    </li>
+  <% end %>
+</ul>

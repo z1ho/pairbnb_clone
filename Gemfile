@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-# Elastic Search Gem
+
+# Elastic Search Gems
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 gem 'searchkick'
 # Sidekiq Gem
 gem 'sidekiq'

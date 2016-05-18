@@ -56,7 +56,7 @@ Rails.application.routes.draw do
   # CATEGORIES
   get 'tags/:tag', to: 'listings#index', as: :tag
 
-  post '/search/', to: 'search#search'
+ get 'search', to: 'search#search'
 
   # PAYMENTS
   # get 'payments/new/:id', to: "payments#new"
