@@ -45,14 +45,14 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="sr-only" for="location">Location</label>
-                    <input type="email" class="form-control" id="location" placeholder="Where ?">
+                    <input type="email" class="form-control" id="location" placeholder="Where To?" style="text-align: center">
                   </div>
                 </div>
                 <div class="col-md-2">
                   <div class="form-group">
                     <label class="sr-only" for="checkin">Check-In</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" id="checkin" placeholder="Check in">
+                      <input type="text" class="form-control" id="checkin" placeholder="Check in" style="text-align: center">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                     </div>
                   </div>
@@ -61,7 +61,7 @@
                   <div class="form-group">
                     <label class="sr-only" for="checkout">Check-Out</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" id="checkout" placeholder="Check out">
+                      <input type="text" class="form-control" id="checkout" placeholder="Check out" style="text-align: center">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                     </div>
                   </div>
@@ -115,28 +115,8 @@
     </div>
   <% end %>
 
-  <section class="recent-listings">
+      <%= render partial: '/sessions/ideal_locations' %>
 
-    <h2>Recent Listings</h2>
-    <div class="homepic">
-      <div class="homepage_images">
-      <h4 class="image_tag">Iceland</h4>
-        <%= image_tag("iceland.jpg")%>  
-      </div></br>
-
-    <div class="homepic">
-      <div class="homepage_images-b">
-        <img src="/assets/iceland.jpg" style="width:200px; height:200px">
-        <h4 class="image_tag">Iceland</h4>
-      </div></br>
-
-    <div class="homepic">
-      <div class="homepage_images">
-        <%= image_tag("iceland.jpg")%>
-        <h4 class="image_tag">Iceland</h4>
-      </div></br>      
-
-  </section>
 
 </body>
 </html>

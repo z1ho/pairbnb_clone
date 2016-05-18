@@ -190,6 +190,10 @@ div.homepic {
   height: 344px;
 }
 
+img.img-circle:hover{
+  opacity: 0.5;
+}
+
 /* ----- Listing Index / Getaways -----*/
 div.getaways {
   padding-bottom: 100px;
