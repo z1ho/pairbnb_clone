@@ -1,0 +1,20 @@
+<% trips.each do |r|  %>
+
+		<table style="width: 100%">
+			<tr>
+				<th><p><b>Reservation ID: </b></p></th>
+				<th><p><b>Listing ID: </b></p></th>
+				<th><p><b>Check-In Date: </b></p></th>
+				<th><p><b>Check-Out Date: </b></p></th>
+				<th><p><b>Amount Paid: </b></p></th>
+			</tr>
+
+			<tr>
+				<td><p><%= link_to r.id, listing_reservation_path(r.listing_id, r) %></p></td>
+				<td><p><%= r.listing_id %></p></td>
+				<td><p><%= r.start_date %></p></td>
+				<td><p><%= r.end_date %></p></td>
+				<td><p><%= r.amount %></p></td>
+			</tr>
+		</table><hr>
+		<% end %>

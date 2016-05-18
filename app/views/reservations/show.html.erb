@@ -1,4 +1,4 @@
-<h1>Show a Specific Reservation</h1>
+<h1>Confirm Your Reservation Details</h1>
 
 <p>
 	<div>
@@ -28,14 +28,16 @@
 		<b>Tags:</b>
 		<%= @listing.tag_list %><br>
 
-		<b>Total Price<b>
-
-
-
 		<% @full_name = @listing.user.first_name + " " + @listing.user.last_name %>
-		<p><b>Hosted By: </b><%= link_to "#{@full_name}", user_path(@listing.user_id) %></p><br>
+		<p><b>Hosted By: </b><%= link_to "#{@full_name}", user_path(@listing.user_id) %></p>
+
+		<hr><br>
+
+		<b>Total Price<b><br><br>
 
 		<%= link_to 'Proceed to Payment', new_reservation_payment_path(@reserve) %>
+
+		<br><hr><br>
 
 	</div>
 </p>

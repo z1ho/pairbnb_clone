@@ -4,73 +4,31 @@
 	<title>Your Homepage</title>
 </head>
 <body>
-	<h1>Homepage</h1>
-	<h3>Welcome back <b><%= current_user.first_name %></b>!</h3>
+	<center>
+	<div class="user-profile" style="padding-bottom: 80px; background-color: gray, width: 100px, height: 80px">
+	
+		<h1>Welcome back <b><%= current_user.first_name %></b>!</h1>
+		<h3>Choose your next adventure</h3>
 
-	<div class="avatar">
-		<img class="pic_image_circle" src="<%= current_user.avatar %>" alt="User Profile Pic">
-	</div><br/>
+		<div class="avatar">
+			<img class="pic_image_circle" src="<%= current_user.avatar %>" alt="User Profile Pic">
+		</div><br/>
 
-	<%= link_to "Edit Profile", edit_user_path(@user) if current_user == @user %>
-
-	<div>
-		<h2>Your Upcoming Trips</h2><br>	
-		<% @user_trips = Reservation.where(user_id: current_user) %>
-		<% @recent_trip = Reservation.order(start_date: :desc) %>
-		<% @recent_trip.each do |r|  %>
-		<% if Date.current <= r.start_date %>
-
-		<table style="width: 100%">
-			<tr>
-				<th><p><b>Reservation ID: </b></p></th>
-				<th><p><b>Listing ID: </b></p></th>
-				<th><p><b>Check-In Date: </b></p></th>
-				<th><p><b>Check-Out Date: </b></p></th>
-				<th><p><b>Amount Paid: </b></p></th>
-			</tr>
-
-			<tr>
-				<td><p><%= link_to "#{r.id}" %></p></td>
-				<td><p><%= r.listing_id %></p></td>
-				<td><p><%= r.start_date %></p></td>
-				<td><p><%= r.end_date %></p></td>
-				<td><p><%= r.amount %></p></td>
-			</tr>
-
-			<!-- cancel reservations button -->
-		</table>
-		<% else %>
-		<% end %>
-		<% end %>
+		<%= link_to "Edit Profile", edit_user_path(@user) if current_user == @user %>
+	</div>
+	</center>
+	<div style="padding-bottom: 100px">
+		<div style="background-color: #565a5c; color: #fff; vertical-align: middle">
+			<h2>Your Upcoming Trips</h2><br>
+		</div>	
+		<%= render partial: 'static/reservation_list', locals: { trips: @recent_trips } %>
 	</div>
 
-	<div style="padding-bottom: 100px">
-		<h2>Your Previous Trips</h2><br>	
-		<% @user_trips = Reservation.where(user_id: current_user) %>
-		<% @recent_trip = Reservation.order(start_date: :desc) %>
-		<% @recent_trip.each do |r|  %>
-		<% if Date.current > r.start_date %>
-
-		<table style="width: 100%">
-			<tr>
-				<th><p><b>Reservation ID: </b></p></th>
-				<th><p><b>Listing ID: </b></p></th>
-				<th><p><b>Check-In Date: </b></p></th>
-				<th><p><b>Check-Out Date: </b></p></th>
-				<th><p><b>Amount Paid: </b></p></th>
-			</tr>
-
-			<tr>
-				<td><p><%= link_to "#{r.id}" %></p></td>
-				<td><p><%= r.listing_id %></p></td>
-				<td><p><%= r.start_date %></p></td>
-				<td><p><%= r.end_date %></p></td>
-				<td><p><%= r.amount %></p></td>
-			</tr>
-		</table>
-		<% else %>
-		<% end %>
-		<% end %>
+	<div style="padding-bottom: 200px">
+		<div style="background-color: #565a5c; color: #fff; text-align: middle">
+			<h2>Your Previous Trips</h2><br>
+		</div>
+		<%= render partial: 'static/reservation_list', locals: { trips: @previous_trips } %>
 	</div>
 
 

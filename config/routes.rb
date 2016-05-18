@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   # Post SIGN-IN redirect to Homepage
-  get 'static/home'
+  get 'static/home' => 'static#home'
 
   # USERS
   resources :users, only: [:show, :edit, :update, :destroy]
@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   # FACEBOOK SIGN-IN
   get "/auth/:provider/callback" => "sessions#create_from_omniauth", as: "callback"
-  resources :users, only: [:show, :edit, :update, :destroy]
+
 
   # SESSIONS
   # get 'sessions/show'

@@ -2,11 +2,9 @@ class StaticController < ApplicationController
   before_action :require_login
 
   def home 
-  	@user_trips = Reservation.where(user_id: current_user)
-	@recent_trip = Reservation.order(start_date: :desc)
-	@recent_trip.each do |r| 
-	@current_date = Date.current
-	end
+  	@trips = Reservation.where(user_id: current_user).order(start_date: :desc)
+	@recent_trips = @trips.where('start_date >= ?', Date.current)
+	@previous_trips = @trips.where('start_date < ?', Date.current)
   end
   
 end
