@@ -1,5 +1,15 @@
+<% if @user.errors.full_messages.present? %>
+  <ul class='alert alert-danger'>
+  <% @user.errors.full_messages.each do |f| %>
+    <li><%= f %></li>
+  <% end %>
+  </ul><br>
+<% else %>
+<% end %>
+
 <h1><u>Edit Your Profile</u></h1>
 
+<div style="padding-bottom: 100px">
 <%= form_for @user do |u| %>
 
 	<%= u.label :first_name %>
@@ -12,15 +22,27 @@
   <%= u.text_field :email, type: 'Email' %><br/>
 
   <%= u.label :birthday %>
-  <%= u.date_field(:birthday) %><br/>
+  <%= u.date_field :birthday, :value => current_user.birthday %><br/>
 
-  <%= u.label :gender %>
-  <%= u.select :gender, options_for_select(
-    [["Male", "Male"], ["Female", "Female"]]
-    )%><br/>
+  <% if current_user.gender == "Male" %>
+    <%= u.label :gender %>
+    <%= u.select :gender, options_for_select(
+      [["Male", "Male"], ["Female", "Female"]]
+      )%><br/>
+
+  <% else %>
+    <%= u.label :gender %>
+    <%= u.select :gender, options_for_select(
+      [["Female", "Female"], ["Male", "Male"]]
+      )%><br/>
+
+  <% end %>
 
   <%= u.label :about %>
   <%= u.text_area(:about) %><br/>
+
+  <%= u.label :password %>
+  <%= u.password_field :password %><br/>  
 
   <%= u.check_box :subscribe, value: 1 %>
   <%= label_tag(:subscribe, "Subscribe to Newsletter") %><br/>
@@ -30,4 +52,4 @@
 	<%= u.submit %>
 
 <% end %>
-
+</div>

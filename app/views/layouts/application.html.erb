@@ -30,6 +30,8 @@
 
     <br><br><br><br>
 
+    <!-- Bar, top right -->
+
       <div id="header" style="text-align: right;">
         <% if signed_in? -%>
           <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
@@ -50,6 +52,8 @@
     <br><br><br>
 
     <%= yield %>
+
+    <!-- Footer -->
 
     <center>
       <div class="footer">

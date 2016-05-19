@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'listings#index', as: :tag
 
  get 'search', to: 'search#search'
+ post 'search', to: 'search#search'
 
   # PAYMENTS
   # get 'payments/new/:id', to: "payments#new"

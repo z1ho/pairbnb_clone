@@ -8,12 +8,13 @@ class SessionsController < ApplicationController
       user = authentication.user 
       authentication.update_token(auth_hash)
       @next = root_url
-      @notice = "Signed in!"
+      # @notice = "Signed in!"
+      flash[:success] = "Signed in!"
     else
     #else, create the new user
       user = User.create_with_auth_and_hash(authentication,auth_hash)
       @next = root_url   
-      @notice = "User created - confirm or edit details..."
+      flash[:warning] =  "User created - confirm or edit details..."
     end
     sign_in(user)
     redirect_to @next, :notice => @notice

@@ -10,15 +10,20 @@ class UsersController < ApplicationController
 
   def edit
   	@user = User.find(params[:id])  
+
   end
 
+
   def update
-	@user = User.find(params[:id])  
-	@user.update(user_params)
+	@user = User.find(params[:id]) 
+	# @user.update_attributes(user_params_update)
+	@user.update(user_params_update)
+
 	if @user.save
 		redirect_to my_profile_path
+		flash[:success] = "Successfully updated details!"
 		else
-			flash[:warning] = "Error, details not updated"
+			# flash[:danger] = "Error, details not updated"
 			render :edit
 		end
 	end
@@ -28,9 +33,13 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:first_name, :last_name, :email, :gender, :birthday, :subscribe, :encrypted_password, :avatar, :about, :reservations)
 	end
 
+	def user_params_update
+		params.require(:user).permit(:first_name, :last_name, :email, :gender, :birthday, :subscribe, :about).merge(encrypted_password: @user.encrypted_password)
+	end
+
 	def check_user
 		unless current_user == User.find(params[:id])
-			flash[:warning] = "Error, please try again"
+			flash[:danger] = "Error, please try again"
 			redirect_to '/'
 		end
 	end
