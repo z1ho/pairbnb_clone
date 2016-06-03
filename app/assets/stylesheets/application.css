@@ -45,7 +45,7 @@ nav.navbar-findcond span.badge { background: #f14444; font-weight: normal; font-
 nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
 
 /* ----- Carousel -----*/
- 
+
 div.col-xs-12 {
   padding-left: 0px;
   padding-right: 0px;
@@ -53,7 +53,7 @@ div.col-xs-12 {
 
 .carousel-caption {
 	margin-bottom: 70px;
-} 
+}
 
 .carousel {
   height: 500px;
@@ -164,7 +164,7 @@ a.footer-btn {
 }
 
 /* Homepage */
-img {             
+img {
   width: 335px;
   height: 344px;
 }
@@ -209,12 +209,10 @@ div.payment {
   padding-bottom: 150px;
 }
 
-
 div.homepage_images-b {
   width: 100;
   height: 100;
 }
-
 
 /* Image Center */
 
@@ -294,7 +292,7 @@ h4.location-tag {
   max-width: 100%;
   height: 100%;
   text-align: center;
-  
+
 }
 
 

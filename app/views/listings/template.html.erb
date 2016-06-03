@@ -1,26 +1,16 @@
-<head>
-  <title>Getaways</title>
-</head>
-
-<body>
-  <% if current_user %>
-  <h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
-  <% end %>
-
-  <h1><u>Search By</u></h1>
-
-  <div id="tag_cloud" style="width: 100%;">
-    <% tag_cloud Listing.tag_counts, %w[s m l] do |tag, css_class| %>#<%= link_to tag.name, tag_path(tag.name), class: css_class %><%= " | " %>
-    <% end %>
-  </div><hr>
-
 <div class="container">
+  <div class="row info" style="text-align:center;">
+    <div class="col-xs-12 alert alert-info">
+      The skills meter from <a class="alert-link" href="http://bootsnipp.com/snippets/featured/progress-bar-meter">here</a> is used in this design. 
+      Feel free to remove this div from the design.
+    </div>
+  </div>
 
   <div class="resume">
     <header class="page-header">
         <% @listings.each do |l| %>
       <h1 class="page-title"><%= link_to l.name, l %></h1>
-      <small> <i class="fa fa-clock-o"></i> Last Updated on: <time><%= l.updated_at%></time></small>
+      <small> <i class="fa fa-clock-o"></i> Last Updated on: <time>Sunday, October 05, 2014</time></small>
     </header>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -34,6 +24,39 @@
                   </figure>
 
                   <div class="row">
+                    <div class="col-xs-12 social-btns">
+
+                      <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                        <a href="#" class="btn btn-social btn-block btn-google">
+                          <i class="fa fa-google"></i> </a>
+                        </div>
+
+                        <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                          <a href="#" class="btn btn-social btn-block btn-facebook">
+                            <i class="fa fa-facebook"></i> </a>
+                          </div>
+
+                          <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                            <a href="#" class="btn btn-social btn-block btn-twitter">
+                              <i class="fa fa-twitter"></i> </a>
+                            </div>
+
+                            <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                              <a href="#" class="btn btn-social btn-block btn-linkedin">
+                                <i class="fa fa-linkedin"></i> </a>
+                              </div>
+
+                              <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                <a href="#" class="btn btn-social btn-block btn-github">
+                                  <i class="fa fa-github"></i> </a>
+                                </div>
+
+                                <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                  <a href="#" class="btn btn-social btn-block btn-stackoverflow">
+                                    <i class="fa fa-stack-overflow"></i> </a>
+                                  </div>
+
+                                </div>
                               </div>
 
                             </div>
@@ -67,10 +90,5 @@
                   </div>
                 </div>
               </div>
-            </div><hr>
-            <% end %>
+            </div>
 </div>
-
-  
-</body>
-

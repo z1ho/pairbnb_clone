@@ -1,0 +1,53 @@
+<head>
+  <title>Getaways</title>
+</head>
+
+<body>
+  <% if current_user %>
+  <h5>Welcome back <b><%= current_user.first_name %></b>!</h5>
+  <% end %>
+
+  <h1><u>Search By</u></h1>
+
+
+  <div id="tag_cloud" style="width: 100%;">
+    <% tag_cloud Listing.tag_counts, %w[s m l] do |tag, css_class| %>#<%= link_to tag.name, tag_path(tag.name), class: css_class %><%= " | " %>
+    <% end %>
+  </div><hr>
+
+  <h1><u>Getaways</u></h1>
+
+  <div class="getaways">
+    <% @listings.each do |l| %>
+
+      <h2></b><%= link_to l.name, l %></h2>
+
+      <p><b>Description of Listing: </b><%= l.description %></p>
+
+      <p><b>Country: </b><%= l.country %></p>
+
+      <p><b>City: </b><%= l.city %></p>
+
+      <p><b>Room Type: </b><%= l.room_type %></p>
+
+      <p><b>Property Type: </b><%= l.property_type %></p>
+
+      <p><b>Accomodates: </b><%= l.accomodates %></p>
+
+      <p><b>Categories: </b>
+      <%= raw l.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+        
+      <p><b>Price Per Stay: </b><%= l.price %></p>
+
+      <p><b>Hosted By: </b><%= l.user.first_name %> <%= l.user.last_name %></p>
+
+      <% if @user.id == l.user_id%>
+        <%= link_to "Delete Listing", listing_path(l.id), method: :delete %>
+        <%= "|" %>
+        <%= link_to "Edit Listing", edit_listing_path(l.id) %>
+      <% else %>
+      <% end %><hr/>
+    <% end %>
+  </div>
+</body>
+

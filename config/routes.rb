@@ -16,14 +16,13 @@
 #   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
 #   get "/sign_up" => "clearance/users#new", as: "sign_up"
 #   get 'welcome/index'
-#   resources :users, only: [:show, :edit, :update, :destroy] 
-  
+#   resources :users, only: [:show, :edit, :update, :destroy]
+
 #   root 'welcome#index'
 #   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
-  
+
 
 Rails.application.routes.draw do
-
 
   # Landing Page
   root 'sessions#new'
@@ -33,13 +32,12 @@ Rails.application.routes.draw do
 
   # USERS
   resources :users, only: [:show, :edit, :update, :destroy]
-  
+
   # PROFILE
   get '/profile', to: "users#profile", as: "my_profile"
 
   # FACEBOOK SIGN-IN
   get "/auth/:provider/callback" => "sessions#create_from_omniauth", as: "callback"
-
 
   # SESSIONS
   # get 'sessions/show'
@@ -58,6 +56,8 @@ Rails.application.routes.draw do
 
  get 'search', to: 'search#search'
  post 'search', to: 'search#search'
+
+ get 'listings/template'
 
   # PAYMENTS
   # get 'payments/new/:id', to: "payments#new"
