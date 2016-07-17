@@ -8,6 +8,8 @@ class Listing < ActiveRecord::Base
 
   acts_as_taggable
   mount_uploaders :image, ImageUploader
+  # added by ZWH 9-JUL-16
+  mount_uploader :avatar, AvatarUploader 
 
   validates :name, presence: true
   validates :description, presence: true

@@ -14,3 +14,28 @@
 	</div>
 
 </div>
+
+    <!-- Bar, top right -->
+
+      <div id="header" style="text-align: right;">
+        <% if signed_in? -%>
+          <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
+          <%= link_to "Home |", static_home_path, class: "link" %>
+          <%= link_to "View All Listings |", listings_path, class: "button" %>
+          <%= link_to "Add a Listing |", new_listing_path, class: "button" %>
+          <p><b>Date: </b><%= Time.now.strftime("%Y-%m-%d") %></p>
+        <% else -%>
+          <%= link_to t(".sign_in"), sign_in_path %>
+        <% end -%>
+      </div>
+      <div id="flash">
+        <% flash.each do |key, value| -%>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
+
+    <br><br><br>
+
+    <%= yield %>
+
+    <!-- Footer -->

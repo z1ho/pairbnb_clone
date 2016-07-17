@@ -21,7 +21,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
-  process resize_to_fit: [335, 344]
+
+  ### ZWH COMMENTED OUT ### 
+  # process resize_to_fit: [335, 344]
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
@@ -29,15 +31,23 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   version :unicorn do
-    process resize_to_fit: [400, 400]
+    process resize_to_fit: [500, 350]
   end
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_fit: [60, 60]
   end
 
   version :hompepage_feature do
     process resize_to_fit: [335, 344]
+  end
+
+  version :listing_pic do
+    process resize_to_fit: [80,80]
+  end
+
+  version :listing_hd do
+    process resize_to_fit: [600,400]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

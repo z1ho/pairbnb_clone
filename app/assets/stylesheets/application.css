@@ -107,11 +107,11 @@ div#clearance.sign-in {
 /* ----- Footer -----*/
 
 div.footer {
-  background-color: gray;
-  padding: 40px;
+  background-color: #333;
+  padding: 20px;
   bottom: 0;
 /*  margin-top: 50px;*/
-  position: fixed;
+  position: relative;
   width: 100%;
 /*  border-top: solid;*/
 /*  border-color: #fff;*/
@@ -122,6 +122,11 @@ a.footer-btn {
   padding: 20px 80px;
   color: #fff;
   font-size: 15px;
+}
+
+a.footer-btn:hover {
+  color: #f14444;
+  text-decoration: none;
 }
 
 /* ----- Avatar -----*/
@@ -191,7 +196,8 @@ div.homepic {
 }
 
 img.img-circle:hover{
-  opacity: 0.7;
+/*  opacity: 0.7;*/
+  background-color: #222;
 }
 
 
